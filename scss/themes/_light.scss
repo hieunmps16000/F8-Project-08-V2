@@ -1,6 +1,7 @@
 @use "../abstracts";
 
 html {
+    --body-bg-color: #f6f6f6;
     --text-color: #1a162e;
     --icon-color: brightness(0) saturate(100%) invert(8%) sepia(7%) saturate(5802%) hue-rotate(212deg) brightness(92%)
         contrast(96%);
@@ -12,4 +13,8 @@ html {
     --header-shadow: rgba(237, 237, 246, 0.2);
     --top-act-bg-color: #fff;
     --top-act-group-shadow: rgba(237, 237, 246, 0.2);
+
+    // Dropdown
+    --dropdown-bg-color: #fff;
+    --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
 }

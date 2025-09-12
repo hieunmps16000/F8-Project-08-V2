@@ -66,6 +66,7 @@ body {
   color: var(--text-color);
   font-size: 1.6rem;
   font-family: "Gordita", sans-serif;
+  background: var(--body-bg-color);
 }
 
 a {
@@ -1153,6 +1154,9 @@ button {
   }
 }
 
+.top-bar {
+  position: relative;
+}
 @media (max-width: 575.98px) {
   .top-bar {
     justify-content: space-between;
@@ -1186,9 +1190,14 @@ button {
     display: none;
   }
 }
+.navbar__item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+}
 .navbar__link {
   column-gap: 6px;
-  padding: 8px 15px;
+  height: 50px;
+  padding: 0 15px;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 146.667%;
@@ -1273,7 +1282,34 @@ button {
   }
 }
 
+.dropdown {
+  position: absolute;
+  left: 0;
+  width: 1240px;
+  padding-top: 54px;
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility;
+  transition-duration: 0.25s;
+}
+.dropdown__inner {
+  position: relative;
+  padding: 30px;
+  border-radius: 20px;
+  background: var(--dropdown-bg-color);
+  box-shadow: 0 40px 90px 20px var(--dropdown-shadow-color);
+}
+.dropdown__inner::before {
+  position: absolute;
+  top: -14px;
+  left: var(--arrow-left-pos);
+  content: url("../icons/dropdown-arrow.svg");
+  transform: translateX(-50%);
+  filter: var(--dropdown-arrow-color);
+}
+
 html {
+  --body-bg-color: #f6f6f6;
   --text-color: #1a162e;
   --icon-color: brightness(0) saturate(100%) invert(8%) sepia(7%) saturate(5802%) hue-rotate(212deg) brightness(92%)
       contrast(96%);
@@ -1281,6 +1317,8 @@ html {
   --header-shadow: rgba(237, 237, 246, 0.2);
   --top-act-bg-color: #fff;
   --top-act-group-shadow: rgba(237, 237, 246, 0.2);
+  --dropdown-bg-color: #fff;
+  --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
 }
 @media (max-width: 991.98px) {
   html {
@@ -1289,6 +1327,7 @@ html {
 }
 
 html.dark {
+  --body-bg-color: #292e39;
   --text-color: #fff;
   --icon-color: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(294deg) brightness(111%)
       contrast(101%);
@@ -1296,6 +1335,10 @@ html.dark {
   --header-shadow: rgba(0, 0, 0, 0.2);
   --top-act-bg-color: #292e39;
   --top-act-group-shadow: rgba(0, 0, 0, 0.2);
+  --dropdown-bg-color: #333946;
+  --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(19%) sepia(9%) saturate(1376%) hue-rotate(183deg)
+      brightness(91%) contrast(85%);
 }
 
 /*# sourceMappingURL=main.css.map */
