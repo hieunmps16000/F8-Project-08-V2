@@ -1,11 +1,18 @@
+@use "../abstracts";
+
 %flexCenter {
     display: flex;
     align-items: center;
 }
 
 .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
     padding: 30px 0;
-    background: #eee;
+    background: var(--header-bg-color);
 }
 
 .top-bar {
@@ -14,6 +21,10 @@
 
 .navbar {
     margin-left: 144px;
+
+    @include abstracts.breakpoint(lg) {
+        display: none;
+    }
 
     &__list {
         @extend %flexCenter;
@@ -44,8 +55,8 @@
         @extend %flexCenter;
 
         border-radius: 8px;
-        background: #fff;
-        box-shadow: 0 20px 60px 10px rgba(237, 237, 246, 0.2);
+        background: var(--top-act-bg-color);
+        box-shadow: 0 20px 60px 10px var(--top-act-group-shadow);
     }
 
     &__group--single &__btn {
