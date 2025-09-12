@@ -82,6 +82,7 @@ option {
 }
 
 button {
+  padding: 0;
   border: none;
   outline: none;
   color: inherit;
@@ -91,6 +92,7 @@ button {
 }
 
 .icon {
+  display: block;
   filter: var(--icon-color);
 }
 
@@ -1139,9 +1141,45 @@ button {
   padding: 30px 0;
   background: var(--header-bg-color);
 }
+@media (max-width: 991.98px) {
+  .header {
+    padding: 24px 0;
+  }
+}
+@media (max-width: 575.98px) {
+  .header {
+    padding: 16px 21px;
+    box-shadow: 0 20px 60px 10px var(--header-shadow);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .top-bar {
+    justify-content: space-between;
+  }
+}
+.top-bar__more {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .top-bar__more {
+    display: block;
+    margin-right: 40px;
+  }
+}
+@media (max-width: 767.98px) {
+  .top-bar__more {
+    margin-right: 0;
+  }
+}
 
 .navbar {
   margin-left: 144px;
+}
+@media (max-width: 1199.98px) {
+  .navbar {
+    margin-left: 32px;
+  }
 }
 @media (max-width: 991.98px) {
   .navbar {
@@ -1163,10 +1201,20 @@ button {
   column-gap: 20px;
   margin-left: auto;
 }
+@media (max-width: 767.98px) {
+  .top-act {
+    margin-left: 0;
+  }
+}
 .top-act__group {
   border-radius: 8px;
   background: var(--top-act-bg-color);
   box-shadow: 0 20px 60px 10px var(--top-act-group-shadow);
+}
+@media (max-width: 767.98px) {
+  .top-act__group {
+    display: none;
+  }
 }
 .top-act__group--single .top-act__btn {
   padding: 0 13px;
@@ -1200,13 +1248,24 @@ button {
 .logo {
   display: flex;
   align-items: center;
-  column-gap: 14px;
   color: var(--text-color);
 }
+@media (max-width: 575.98px) {
+  .logo__img {
+    width: 24px;
+  }
+}
 .logo__title {
+  margin-left: 14px;
   font-size: 2.2rem;
   font-weight: 700;
   line-height: 145.455%;
+}
+@media (max-width: 575.98px) {
+  .logo__title {
+    margin-left: 10px;
+    font-size: 1.8rem;
+  }
 }
 
 html {
@@ -1214,8 +1273,14 @@ html {
   --icon-color: brightness(0) saturate(100%) invert(8%) sepia(7%) saturate(5802%) hue-rotate(212deg) brightness(92%)
       contrast(96%);
   --header-bg-color: #eee;
+  --header-shadow: rgba(237, 237, 246, 0.2);
   --top-act-bg-color: #fff;
   --top-act-group-shadow: rgba(237, 237, 246, 0.2);
+}
+@media (max-width: 575.98px) {
+  html {
+    --header-bg-color: #fff;
+  }
 }
 
 html.dark {
@@ -1223,6 +1288,7 @@ html.dark {
   --icon-color: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(2%) hue-rotate(294deg) brightness(111%)
       contrast(101%);
   --header-bg-color: #171c28;
+  --header-shadow: rgba(0, 0, 0, 0.2);
   --top-act-bg-color: #292e39;
   --top-act-group-shadow: rgba(0, 0, 0, 0.2);
 }

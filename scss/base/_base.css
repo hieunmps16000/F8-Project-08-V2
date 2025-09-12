@@ -28,6 +28,7 @@ option {
 }
 
 button {
+    padding: 0;
     border: none;
     outline: none;
     color: inherit;
@@ -37,5 +38,6 @@ button {
 }
 
 .icon {
+    display: block;
     filter: var(--icon-color);
 }
