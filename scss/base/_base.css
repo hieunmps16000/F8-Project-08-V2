@@ -5,7 +5,9 @@
 }
 
 :root {
-    --primary-color: #1a162e;
+    --text-color: #1a162e;
+    --icon-color: brightness(0) saturate(100%) invert(8%) sepia(7%) saturate(5802%) hue-rotate(212deg) brightness(92%)
+        contrast(96%);
 }
 
 html {
@@ -13,13 +15,13 @@ html {
 }
 
 body {
-    color: var(--primary-color);
+    color: var(--text-color);
     font-size: 1.6rem;
     font-family: "Gordita", sans-serif;
 }
 
 a {
-    color: var(--primary-color);
+    color: inherit;
     text-decoration: none;
 }
 
@@ -38,4 +40,8 @@ button {
     background: inherit;
     user-select: none;
     cursor: pointer;
+}
+
+.icon {
+    filter: var(--icon-color);
 }

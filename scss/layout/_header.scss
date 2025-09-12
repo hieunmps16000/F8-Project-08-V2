@@ -67,7 +67,7 @@
         line-height: 146.667%;
     }
 
-    &__separator {
+    &__separate {
         width: 1px;
         height: 30px;
         background: #ededf6;
@@ -79,6 +79,7 @@
         height: 50px;
         border-radius: 8px;
         object-fit: cover;
+        cursor: pointer;
         box-shadow: 0 4px 14px 2px rgba(0, 0, 0, 0.08);
     }
 }
