@@ -64,9 +64,10 @@ html {
 
 body {
   color: var(--text-color);
-  font-size: 1.6rem;
-  font-family: "Gordita", sans-serif;
   background: var(--body-bg-color);
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "Gordita", sans-serif;
 }
 
 a {
@@ -1285,15 +1286,14 @@ button {
 .dropdown {
   position: absolute;
   left: 0;
-  width: 1240px;
+  width: min(1240px, 100%);
   padding-top: 54px;
-  opacity: 0;
-  visibility: hidden;
   transition-property: opacity, visibility;
   transition-duration: 0.25s;
 }
 .dropdown__inner {
   position: relative;
+  max-height: min(518px, 100vh - 158px);
   padding: 30px;
   border-radius: 20px;
   background: var(--dropdown-bg-color);
@@ -1308,6 +1308,63 @@ button {
   filter: var(--dropdown-arrow-color);
 }
 
+.top-menu {
+  height: 100%;
+}
+.top-menu__main {
+  width: 292px;
+  height: 100%;
+}
+
+.menu-column {
+  display: flex;
+  gap: 14px;
+  border-right: 1px solid var(--menu-column-border-color);
+}
+.menu-column__icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+}
+.menu-column__icon-1 {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.menu-column__icon-2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+.menu-column__content {
+  flex: 1;
+}
+.menu-column__heading {
+  margin-top: 6px;
+  color: var(--menu-column-heading-color);
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
+}
+.menu-column__list {
+  margin-top: 19px;
+}
+.menu-column__link {
+  display: block;
+  padding: 7px 0;
+  color: var(--menu-column-link-color);
+  font-size: 1.4rem;
+  line-height: 142.857%;
+}
+.menu-column__link:hover {
+  color: #0071dc;
+  font-weight: 500;
+}
+
 html {
   --body-bg-color: #f6f6f6;
   --text-color: #1a162e;
@@ -1319,6 +1376,7 @@ html {
   --top-act-group-shadow: rgba(237, 237, 246, 0.2);
   --dropdown-bg-color: #fff;
   --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
+  --menu-column-border-color: #d2d1d6;
 }
 @media (max-width: 991.98px) {
   html {
@@ -1339,6 +1397,9 @@ html.dark {
   --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
   --dropdown-arrow-color: brightness(0) saturate(100%) invert(19%) sepia(9%) saturate(1376%) hue-rotate(183deg)
       brightness(91%) contrast(85%);
+  --menu-column-border-color: #171c28;
+  --menu-column-heading-color: #b9babe;
+  --menu-column-link-color: #b9babe;
 }
 
 /*# sourceMappingURL=main.css.map */

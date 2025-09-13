@@ -10,9 +10,10 @@ html {
 
 body {
     color: var(--text-color);
-    font-size: 1.6rem;
-    font-family: "Gordita", sans-serif;
     background: var(--body-bg-color);
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: "Gordita", sans-serif;
 }
 
 a {
