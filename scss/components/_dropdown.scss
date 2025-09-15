@@ -9,9 +9,10 @@
     transition-duration: 0.25s;
 
     &__inner {
+        --inner-padding: 30px;
+
         position: relative;
-        max-height: min(518px, 100vh - 158px);
-        padding: 30px;
+        padding: var(--inner-padding);
         border-radius: 20px;
         background: var(--dropdown-bg-color);
         box-shadow: 0 40px 90px 20px var(--dropdown-shadow-color);
@@ -28,11 +29,12 @@
 }
 
 .top-menu {
-    height: 100%;
+    position: relative;
 
     &__main {
         width: 292px;
-        height: 100%;
+        max-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+        overflow-y: auto;
     }
 }
 
@@ -61,6 +63,7 @@
         width: 24px;
         height: 24px;
         object-fit: cover;
+        filter: var(--menu-column-icon-color);
     }
 
     &__content {
