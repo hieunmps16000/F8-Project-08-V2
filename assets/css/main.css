@@ -1309,18 +1309,22 @@ button {
 }
 
 .top-menu {
+  --top-menu-main-width: 292px;
   position: relative;
 }
 .top-menu__main {
-  width: 292px;
-  max-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+  width: var(--top-menu-main-width);
+  height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+  border-right: 1px solid var(--menu-column-border-color);
   overflow-y: auto;
 }
 
 .menu-column {
   display: flex;
   gap: 14px;
-  border-right: 1px solid var(--menu-column-border-color);
+}
+.menu-column + .menu-column {
+  margin-top: calc(var(--inner-padding) - 7px);
 }
 .menu-column__icon {
   position: relative;
@@ -1331,7 +1335,7 @@ button {
 .menu-column__icon-1 {
   width: 30px;
   height: 30px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .menu-column__icon-2 {
   position: absolute;
@@ -1339,7 +1343,7 @@ button {
   right: 0;
   width: 24px;
   height: 24px;
-  object-fit: cover;
+  object-fit: contain;
   filter: var(--menu-column-icon-color);
 }
 .menu-column__content {
@@ -1353,7 +1357,15 @@ button {
   line-height: 150%;
 }
 .menu-column__list {
-  margin-top: 19px;
+  margin-top: 16px;
+}
+.menu-column__item:hover > .menu-column__link {
+  color: #0071dc;
+  font-weight: 500;
+}
+.menu-column__item:hover > .sub-menu {
+  opacity: 1;
+  visibility: visible;
 }
 .menu-column__link {
   display: block;
@@ -1362,9 +1374,18 @@ button {
   font-size: 1.4rem;
   line-height: 142.857%;
 }
-.menu-column__link:hover {
-  color: #0071dc;
-  font-weight: 500;
+
+.sub-menu {
+  position: absolute;
+  inset: 0 0 0 var(--top-menu-main-width);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+}
+.sub-menu__column {
+  padding-left: var(--inner-padding);
 }
 
 html {
