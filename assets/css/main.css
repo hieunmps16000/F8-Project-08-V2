@@ -1231,11 +1231,12 @@ button {
     display: none;
   }
 }
-.top-act__group--single__btn {
+.top-act__group--single .top-act__btn {
   padding: 0 13px;
 }
 .top-act__btn {
   column-gap: 10px;
+  min-width: 22px;
   height: 50px;
   padding: 0 20px;
   border-radius: 8px;
@@ -1364,11 +1365,11 @@ button {
 .menu-column__list {
   margin-top: 19px;
 }
-.menu-column__item:hover > .menu-column__link {
+.menu-column__item--active > .menu-column__link, .menu-column__item:hover > .menu-column__link {
   color: #0071dc;
   font-weight: 500;
 }
-.menu-column__item:hover > .sub-menu {
+.menu-column__item--active .sub-menu {
   opacity: 1;
   visibility: visible;
 }
