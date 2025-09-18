@@ -61,10 +61,14 @@
         @extend %flexCenter;
     }
 
-    &__item:hover .dropdown,
-    &__item:hover .sub-menu--not-main {
-        opacity: 1;
-        visibility: visible;
+    &__item:hover {
+        .dropdown {
+            display: block;
+        }
+
+        .sub-menu--not-main {
+            display: grid;
+        }
     }
 
     &__link {
