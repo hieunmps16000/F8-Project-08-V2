@@ -1332,6 +1332,11 @@ button {
   width: 36px;
   height: 36px;
 }
+@media (max-width: 1199.98px) {
+  .menu-column__icon {
+    display: none;
+  }
+}
 .menu-column__icon-1 {
   width: 30px;
   height: 30px;
@@ -1357,7 +1362,7 @@ button {
   line-height: 150%;
 }
 .menu-column__list {
-  margin-top: 16px;
+  margin-top: 19px;
 }
 .menu-column__item:hover > .menu-column__link {
   color: #0071dc;
@@ -1380,12 +1385,15 @@ button {
   inset: 0 0 0 var(--top-menu-main-width);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  overflow-y: auto;
   opacity: 0;
   visibility: hidden;
+  overflow-y: auto;
 }
 .sub-menu__column {
   padding-left: var(--inner-padding);
+}
+.sub-menu__column .menu-column:nth-child(2) .menu-column__item:last-child .menu-column__link {
+  padding-bottom: 0;
 }
 
 html {

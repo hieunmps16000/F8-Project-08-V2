@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 .dropdown {
     position: absolute;
     left: 0;
@@ -53,6 +55,10 @@
         flex-shrink: 0;
         width: 36px;
         height: 36px;
+
+        @include abstracts.breakpoint(xl) {
+            display: none;
+        }
     }
 
     &__icon-1 {
@@ -84,7 +90,7 @@
     }
 
     &__list {
-        margin-top: 16px;
+        margin-top: 19px;
     }
 
     &__item:hover > &__link {
@@ -113,11 +119,15 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    overflow-y: auto;
     opacity: 0;
     visibility: hidden;
+    overflow-y: auto;
 
     &__column {
         padding-left: var(--inner-padding);
+
+        .menu-column:nth-child(2) .menu-column__item:last-child .menu-column__link {
+            padding-bottom: 0;
+        }
     }
 }
