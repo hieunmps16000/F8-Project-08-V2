@@ -61,7 +61,8 @@
         @extend %flexCenter;
     }
 
-    &__item:hover .dropdown {
+    &__item:hover .dropdown,
+    &__item:hover .sub-menu--not-main {
         opacity: 1;
         visibility: visible;
     }
