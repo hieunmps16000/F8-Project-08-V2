@@ -60,6 +60,7 @@ table {
 
 html {
   font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -1188,7 +1189,34 @@ button {
 }
 @media (max-width: 991.98px) {
   .navbar {
-    display: none;
+    position: fixed;
+    inset: 0 50% 0 0;
+    z-index: 9;
+    margin-left: 0;
+    padding: 40px;
+    border-radius: 0 20px 20px 0;
+    background: #fff;
+    box-shadow: 0 40px 90px 20px rgba(200, 200, 200, 0.4);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+  }
+  .navbar.show {
+    transform: translateX(0);
+  }
+  .navbar.show ~ .navbar__overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar__list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar__item {
+    width: 100%;
   }
 }
 .navbar__item:hover .dropdown {
@@ -1205,8 +1233,33 @@ button {
   font-weight: 500;
   line-height: 146.667%;
 }
+@media (max-width: 991.98px) {
+  .navbar__link {
+    justify-content: space-between;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 150%;
+  }
+}
 .navbar__arrow {
   margin-top: 2px;
+}
+@media (max-width: 991.98px) {
+  .navbar__arrow {
+    rotate: -90deg;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 8;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity, visibility;
+    transition-duration: 0.5s;
+  }
 }
 
 .top-act {

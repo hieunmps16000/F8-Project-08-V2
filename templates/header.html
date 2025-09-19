@@ -1,7 +1,7 @@
 <div class="container">
     <div class="top-bar">
         <!-- More -->
-        <button class="top-bar__more">
+        <button class="top-bar__more js-toggle" toggle-target="#navbar">
             <img src="./assets/icons/more.svg" alt="" class="icon top-bar__more-icon" />
         </button>
 
@@ -12,10 +12,15 @@
         </a>
 
         <!-- Navbar -->
-        <nav class="navbar">
+        <nav id="navbar" class="navbar hide">
+            <!-- Navbar close button -->
+            <button class="navbar__close-btn js-toggle" toggle-target="#navbar">
+                <img src="./assets/icons/arrow-left.svg" alt="" class="icon" />
+            </button>
+
             <ul class="navbar__list js-dropdown-list">
                 <li class="navbar__item">
-                    <a href="" class="navbar__link">
+                    <a href="#!" class="navbar__link">
                         Departments
                         <img src="./assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
                     </a>
@@ -3891,9 +3896,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </li>
                 <li class="navbar__item">
-                    <a href="" class="navbar__link">
+                    <a href="#!" class="navbar__link">
                         Grocery
                         <img src="./assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
                     </a>
@@ -3926,8 +3932,7 @@
                                                         <a href="#!" class="menu-column__link">Clothing</a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Grilling Foods
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Grilling Foods </a>
                                                     </li>
                                                     <li class="menu-column__item">
                                                         <a href="#!" class="menu-column__link">Spring Flavors</a>
@@ -3962,16 +3967,13 @@
                                                         <a href="#!" class="menu-column__link">Celebrate Salad Month</a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Healthy Living
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Healthy Living </a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Fresh Flowers
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Fresh Flowers </a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Chilled Dressing
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Chilled Dressing </a>
                                                     </li>
                                                     <li class="menu-column__item">
                                                         <a href="#!" class="menu-column__link">Fresh Fruit</a>
@@ -4244,7 +4246,7 @@
                     </div>
                 </li>
                 <li class="navbar__item">
-                    <a href="" class="navbar__link">
+                    <a href="#!" class="navbar__link">
                         Beauty
                         <img src="./assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
                     </a>
@@ -4274,31 +4276,27 @@
                                                 </h2>
                                                 <ul class="menu-column__list">
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Pickup Today in Beauty</a>
+                                                        <a href="#!" class="menu-column__link"
+                                                            >Pickup Today in Beauty</a
+                                                        >
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">BeautySpaceNK
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">BeautySpaceNK </a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Equate Beauty
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Equate Beauty </a>
                                                     </li>
                                                     <li class="menu-column__item">
                                                         <a href="#!" class="menu-column__link">Beauty Deals</a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Walmart Exclusives
-
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Walmart Exclusives </a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Luxury Beauty Deals
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Luxury Beauty Deals </a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">New Arrivals
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">New Arrivals </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -4324,22 +4322,21 @@
                                                 </h2>
                                                 <ul class="menu-column__list">
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Trending Beauty Products</a>
+                                                        <a href="#!" class="menu-column__link"
+                                                            >Trending Beauty Products</a
+                                                        >
                                                     </li>
                                                     <li class="menu-column__item">
                                                         <a href="#!" class="menu-column__link">Celebrate Earth Day</a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Prom-ready Beauty
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Prom-ready Beauty </a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Summer Beauty
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Summer Beauty </a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Travel Size & Minis
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Travel Size & Minis </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -4420,8 +4417,7 @@
                                                         <a href="#!" class="menu-column__link">LatinX Owned Beauty</a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">AAPI Owned Beauty
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">AAPI Owned Beauty </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -4452,28 +4448,22 @@
                                                         <a href="#!" class="menu-column__link">Shop All</a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Hair Color
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Hair Color </a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Hair Care
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Hair Care </a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Skincare
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Skincare </a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Fragrance
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Fragrance </a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Makeup
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Makeup </a>
                                                     </li>
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Beauty Tech & Tools
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Beauty Tech & Tools </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -4501,8 +4491,7 @@
                                                 </h2>
                                                 <ul class="menu-column__list">
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Shop All
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Shop All </a>
                                                     </li>
                                                     <li class="menu-column__item">
                                                         <a href="#!" class="menu-column__link">Men's Grooming</a>
@@ -4542,6 +4531,7 @@
                 </li>
             </ul>
         </nav>
+        <div class="navbar__overlay js-toggle" toggle-target="#navbar"></div>
 
         <!-- Actions -->
         <div class="top-act">
