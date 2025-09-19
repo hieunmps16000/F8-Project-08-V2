@@ -155,17 +155,9 @@
         border-radius: 8px;
         background: var(--top-act-bg-color);
         box-shadow: 0 20px 60px 10px var(--top-act-group-shadow);
-
-        @include abstracts.breakpoint(md) {
-            display: none;
-        }
     }
 
     &__group--single {
-        @include abstracts.breakpoint(lg) {
-            display: none;
-        }
-
         .top-act__btn {
             padding: 0 13px;
         }
