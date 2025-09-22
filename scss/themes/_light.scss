@@ -16,6 +16,10 @@ html {
     --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
     --menu-column-border-color: #d2d1d6;
 
+    // Navbar
+    --navbar-bg-color: #fff;
+    --navbar-shadow-color: rgba(200, 200, 200, 0.4);
+
     @include abstracts.breakpoint(lg) {
         --header-bg-color: #fff;
     }

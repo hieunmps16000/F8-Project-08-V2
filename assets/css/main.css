@@ -1279,10 +1279,9 @@ button {
     inset: 0 50% 0 0;
     z-index: 9;
     margin-left: 0;
-    padding: 40px;
     border-radius: 0 20px 20px 0;
-    background: #fff;
-    box-shadow: 0 40px 90px 20px rgba(200, 200, 200, 0.4);
+    background: var(--navbar-bg-color);
+    box-shadow: 0 40px 90px 20px var(--navbar-shadow-color);
     transform: translateX(-100%);
     transition: transform 0.5s;
   }
@@ -1294,12 +1293,36 @@ button {
     visibility: visible;
   }
 }
+@media (max-width: 575.98px) {
+  .navbar {
+    inset: 0 20% 0 0;
+  }
+}
+.navbar__close-btn {
+  padding: 20px 40px;
+}
+@media (max-width: 575.98px) {
+  .navbar__close-btn {
+    padding: 20px 0 10px 20px;
+  }
+}
 @media (max-width: 991.98px) {
   .navbar__list {
     flex-direction: column;
     align-items: flex-start;
-    height: calc(100% - 40px);
+    height: calc(100% - 80px);
+    padding: 0 40px;
     overflow-y: auto;
+  }
+}
+@media (max-width: 767.98px) {
+  .navbar__list {
+    height: calc(100% - 164px);
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar__list {
+    padding: 0 20px;
   }
 }
 .navbar__item:hover .dropdown {
@@ -1333,6 +1356,11 @@ button {
     padding: 0;
     font-size: 1.6rem;
     line-height: 150%;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar__link {
+    height: 40px;
   }
 }
 .navbar__arrow {
@@ -1402,6 +1430,26 @@ button {
   object-fit: cover;
   cursor: pointer;
   box-shadow: 0 4px 14px 2px rgba(0, 0, 0, 0.08);
+}
+
+.nav-btn {
+  align-items: center;
+  padding: 0 40px;
+  line-height: 50px;
+}
+@media (max-width: 575.98px) {
+  .nav-btn {
+    padding: 0 20px;
+    line-height: 40px;
+  }
+}
+.nav-btn__title, .nav-btn__qnt {
+  margin-left: 18px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.nav-btn__qnt {
+  margin-left: auto;
 }
 
 .logo {
@@ -1602,6 +1650,7 @@ button {
 @media (max-width: 991.98px) {
   .sub-menu--not-main {
     grid-template-columns: 1fr;
+    height: auto;
   }
 }
 .sub-menu--not-main .sub-menu__column:first-child {
@@ -1620,6 +1669,8 @@ html {
   --dropdown-bg-color: #fff;
   --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
   --menu-column-border-color: #d2d1d6;
+  --navbar-bg-color: #fff;
+  --navbar-shadow-color: rgba(200, 200, 200, 0.4);
 }
 @media (max-width: 991.98px) {
   html {
@@ -1645,6 +1696,8 @@ html.dark {
   --menu-column-link-color: #b9babe;
   --menu-column-icon-color: brightness(0) saturate(100%) invert(95%) sepia(8%) saturate(1355%) hue-rotate(211deg)
       brightness(110%) contrast(95%);
+  --navbar-bg-color: #292e39;
+  --navbar-shadow-color: rgba(23, 28, 40, 0.4);
 }
 
 /*# sourceMappingURL=main.css.map */

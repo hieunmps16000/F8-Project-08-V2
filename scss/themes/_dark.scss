@@ -20,4 +20,8 @@ html.dark {
     --menu-column-link-color: #b9babe;
     --menu-column-icon-color: brightness(0) saturate(100%) invert(95%) sepia(8%) saturate(1355%) hue-rotate(211deg)
         brightness(110%) contrast(95%);
+
+    // Navbar
+    --navbar-bg-color: #292e39;
+    --navbar-shadow-color: rgba(23, 28, 40, 0.4);
 }
