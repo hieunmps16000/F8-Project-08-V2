@@ -7,6 +7,12 @@
     width: min(1240px, 100%);
     padding-top: 54px;
 
+    @include abstracts.breakpoint(lg) {
+        position: initial;
+        display: block;
+        padding-top: 0;
+    }
+
     &__inner {
         --inner-padding: 30px;
 
@@ -16,6 +22,13 @@
         background: var(--dropdown-bg-color);
         box-shadow: 0 40px 90px 20px var(--dropdown-shadow-color);
 
+        @include abstracts.breakpoint(lg) {
+            padding: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
         &::before {
             position: absolute;
             top: -14px;
@@ -23,6 +36,10 @@
             content: url("../icons/dropdown-arrow.svg");
             transform: translateX(-50%);
             filter: var(--dropdown-arrow-color);
+
+            @include abstracts.breakpoint(lg) {
+                content: none;
+            }
         }
     }
 }
@@ -37,6 +54,12 @@
         height: var(--top-menu-height);
         border-right: 1px solid var(--menu-column-border-color);
         overflow-y: auto;
+
+        @include abstracts.breakpoint(lg) {
+            width: 100%;
+            height: auto;
+            border: none;
+        }
     }
 }
 
@@ -85,10 +108,18 @@
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 150%;
+
+        @include abstracts.breakpoint(lg) {
+            margin-bottom: 19px;
+        }
     }
 
     &__list {
         margin-top: 19px;
+
+        @include abstracts.breakpoint(lg) {
+            margin-top: 0;
+        }
     }
 
     &__item--active > &__link,
@@ -119,11 +150,29 @@
 
     overflow-y: auto;
 
+    @include abstracts.breakpoint(lg) {
+        position: initial;
+        grid-template-columns: 1fr;
+
+        .menu-column__icon {
+            display: block;
+        }
+    }
+
     &__column {
         padding-left: var(--inner-padding);
 
+        @include abstracts.breakpoint(lg) {
+            margin-top: 20px;
+            padding-left: 0;
+        }
+
         .menu-column:nth-child(2) .menu-column__item:last-child .menu-column__link {
             padding-bottom: 0;
+
+            @include abstracts.breakpoint(lg) {
+                padding-bottom: 7px;
+            }
         }
     }
 
