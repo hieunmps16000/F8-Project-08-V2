@@ -183,6 +183,10 @@
         grid-template-columns: repeat(4, 1fr);
         height: var(--top-menu-height);
 
+        @include abstracts.breakpoint(lg) {
+            grid-template-columns: 1fr;
+        }
+
         .sub-menu__column:first-child {
             padding-left: 0;
         }

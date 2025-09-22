@@ -1590,6 +1590,11 @@ button {
   grid-template-columns: repeat(4, 1fr);
   height: var(--top-menu-height);
 }
+@media (max-width: 991.98px) {
+  .sub-menu--not-main {
+    grid-template-columns: 1fr;
+  }
+}
 .sub-menu--not-main .sub-menu__column:first-child {
   padding-left: 0;
 }
