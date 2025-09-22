@@ -1302,16 +1302,22 @@ button {
     overflow-y: auto;
   }
 }
-@media (max-width: 991.98px) {
-  .navbar__item {
-    width: 100%;
-  }
-}
 .navbar__item:hover .dropdown {
   display: block;
 }
 .navbar__item:hover .sub-menu--not-main {
   display: grid;
+}
+@media (max-width: 991.98px) {
+  .navbar__item {
+    width: 100%;
+  }
+  .navbar__item:hover .dropdown {
+    display: none;
+  }
+  .navbar__item--active .dropdown {
+    display: block !important;
+  }
 }
 .navbar__link {
   column-gap: 6px;
@@ -1335,7 +1341,11 @@ button {
 @media (max-width: 991.98px) {
   .navbar__arrow {
     rotate: -90deg;
+    transition: rotate 0.3s;
   }
+}
+.navbar__item--active .navbar__arrow {
+  rotate: 0deg;
 }
 @media (max-width: 991.98px) {
   .navbar__overlay {
@@ -1427,7 +1437,6 @@ button {
 @media (max-width: 991.98px) {
   .dropdown {
     position: initial;
-    display: block;
     padding-top: 0;
   }
 }
