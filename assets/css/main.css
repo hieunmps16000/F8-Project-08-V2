@@ -1323,6 +1323,7 @@ button {
     height: calc(100% - 80px);
     padding: 0 40px;
     overflow-y: auto;
+    overscroll-behavior: contain;
   }
 }
 @media (max-width: 767.98px) {

@@ -95,6 +95,7 @@
             height: calc(100% - 80px);
             padding: 0 40px;
             overflow-y: auto;
+            overscroll-behavior: contain;
         }
 
         @include abstracts.screen(md) {
