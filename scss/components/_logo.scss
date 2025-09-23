@@ -6,7 +6,7 @@
     color: var(--text-color);
 
     &__img {
-        @include abstracts.breakpoint(sm) {
+        @include abstracts.screen(sm) {
             width: 24px;
         }
     }
@@ -17,7 +17,7 @@
         font-weight: 700;
         line-height: 145.455%;
 
-        @include abstracts.breakpoint(sm) {
+        @include abstracts.screen(sm) {
             margin-left: 10px;
             font-size: 1.8rem;
         }
