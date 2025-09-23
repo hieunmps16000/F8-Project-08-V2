@@ -23,4 +23,13 @@ html {
     @include abstracts.screen(lg) {
         --header-bg-color: #fff;
     }
+
+    // Category item
+    --cate-item-bg-color: #eee;
+    --cate-item-thumb-bg-color: #fff;
+    --cate-item-title-color: #000;
+
+    @include abstracts.screen(md) {
+        --cate-item-bg-color: #fff;
+    }
 }

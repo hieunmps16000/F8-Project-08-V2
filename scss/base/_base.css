@@ -44,3 +44,9 @@ button {
     display: block;
     filter: var(--icon-color);
 }
+
+.section-heading {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 141.667%;
+}
