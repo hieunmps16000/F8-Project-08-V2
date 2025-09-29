@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 *,
 ::before,
 ::after {
@@ -49,4 +51,16 @@ button {
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 141.667%;
+
+    @include abstracts.screen(lg) {
+        font-size: 2.2rem;
+        line-height: 145.455%;
+    }
+}
+
+@include abstracts.screen(sm) {
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
 }
