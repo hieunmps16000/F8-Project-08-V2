@@ -1856,11 +1856,34 @@ button {
   border-radius: 6px;
   color: #9e9da8;
   background: #f8f8fb;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 500;
+  user-select: none;
 }
 .btn + .btn {
   margin-left: 20px;
+}
+.btn--text {
+  background: transparent;
+  font-weight: 400;
+}
+.btn--primary {
+  color: #1a162e;
+  background: #ffb700;
+}
+.btn--outline {
+  border: 1px solid #d2d1d6;
+  background: transparent;
+}
+.btn--rounded {
+  border-radius: 99px;
+}
+.btn[disabled], .btn--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.btn:hover {
+  opacity: 0.9;
 }
 
 .product-card {
@@ -1916,6 +1939,7 @@ button {
 
 .filter {
   position: absolute;
+  top: 55px;
   right: 0;
   padding: 30px;
   border-radius: 20px;
@@ -1936,9 +1960,25 @@ button {
   margin-top: 30px;
 }
 .filter__separate {
-  margin: 0 30px;
   width: 1px;
+  margin: 0 30px;
   background: #eee;
+}
+.filter__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 32px;
+}
+.filter__footer .btn--primary {
+  margin-left: 0;
+  font-size: 1.4rem;
+}
+.filter__arrow-up {
+  position: absolute;
+  top: -16px;
+  right: 22px;
+  height: 21px;
 }
 
 .filter__form-label {
@@ -1986,7 +2026,7 @@ button {
 .filter__form-slider::after {
   left: var(--maximum);
 }
-.filter__form-input, .filter__form-select-wrap {
+.filter__form-input, .filter__form-select-wrap, .filter__form-search-wrap {
   border-radius: 6px;
   border: 1px solid #d2d1d6;
 }
@@ -1995,7 +2035,7 @@ button {
   height: 36px;
   padding: 0 12px;
 }
-.filter__form-select-wrap {
+.filter__form-select-wrap, .filter__form-search-wrap {
   display: flex;
   align-items: center;
   height: 45px;
@@ -2023,6 +2063,22 @@ button {
 .filter__form-tag {
   height: 32px;
   padding: 0 12px;
+}
+.filter__form-search-wrap {
+  padding: 0 16px;
+}
+.filter__form-search-wrap .filter__form-input {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  font-size: 1.5rem;
+}
+.filter__form-search-wrap .filter__form-input::placeholder {
+  font-weight: 400;
+}
+.filter__form-search-icon {
+  cursor: pointer;
 }
 
 html {
