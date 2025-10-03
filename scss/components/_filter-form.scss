@@ -35,11 +35,16 @@
         align-items: center;
         justify-content: flex-end;
         margin-top: 32px;
+    }
 
-        .btn--primary {
-            margin-left: 0;
-            font-size: 1.4rem;
-        }
+    &__cancel,
+    &__submit {
+        height: 38px;
+        padding: 0 10px;
+    }
+
+    &__submit {
+        font-size: 1.4rem;
     }
 
     &__arrow-up {

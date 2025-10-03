@@ -1970,8 +1970,11 @@ button {
   justify-content: flex-end;
   margin-top: 32px;
 }
-.filter__footer .btn--primary {
-  margin-left: 0;
+.filter__cancel, .filter__submit {
+  height: 38px;
+  padding: 0 10px;
+}
+.filter__submit {
   font-size: 1.4rem;
 }
 .filter__arrow-up {
