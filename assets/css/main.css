@@ -1653,6 +1653,7 @@ button {
 .dropdown {
   position: absolute;
   left: 0;
+  z-index: 1;
   display: none;
   width: min(1240px, 100%);
   padding-top: 54px;
@@ -2001,6 +2002,9 @@ button {
 }
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 46px;
   padding: 0 20px;
   border-radius: 6px;
