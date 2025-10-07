@@ -1,33 +1,84 @@
+@use "../abstracts";
+
 .filter {
     position: absolute;
     top: 55px;
     right: 0;
-    padding: 30px;
+    padding: 30px 0;
     border-radius: 20px;
 
     background: var(--filter-form-bg-color);
     filter: drop-shadow(0 40px 90px var(--filter-form-shadow-color));
 
+    transition: opacity, visibility;
+    transition-duration: 0.25s;
+
+    @include abstracts.screen(md) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.hide {
+        opacity: 0;
+        visibility: hidden;
+    }
+
     &-wrap {
         position: relative;
-        z-index: 1;
+        z-index: 3;
     }
 
     &__heading {
+        padding: 0 30px;
         font-size: 2.2rem;
         font-weight: 500;
         line-height: 145.455%;
+
+        @include abstracts.screen(sm) {
+            padding: 0 20px;
+        }
     }
 
     &__row {
         display: flex;
         margin-top: 30px;
+
+        @include abstracts.screen(xl) {
+            flex-direction: column;
+        }
+    }
+
+    &__content {
+        padding: 0 30px;
+        max-height: calc(100vh - 300px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+
+        @include abstracts.screen(md) {
+            max-height: calc(100vh - 348px);
+        }
+
+        @include abstracts.screen(sm) {
+            padding: 0 20px 60px 20px;
+            max-height: calc(100vh - 200px);
+        }
     }
 
     &__separate {
         width: 1px;
         margin: 0 30px;
         background: #eee;
+
+        @include abstracts.screen(xl) {
+            flex-shrink: 0;
+            width: 100%;
+            height: 1px;
+            margin: 30px 0;
+        }
     }
 
     &__footer {
@@ -35,12 +86,26 @@
         align-items: center;
         justify-content: flex-end;
         margin-top: 32px;
+        padding: 0 30px;
+
+        @include abstracts.screen(sm) {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 0 20px;
+            background: var(--filter-form-bg-color);
+        }
     }
 
     &__cancel,
     &__submit {
         height: 38px;
         padding: 0 10px;
+
+        @include abstracts.screen(sm) {
+            flex: 1;
+            height: 42px;
+        }
     }
 
     &__submit {
@@ -52,6 +117,7 @@
         top: -16px;
         right: 22px;
         height: 21px;
+        filter: var(--filter-arrow-color);
     }
 }
 
@@ -73,6 +139,10 @@
         font-size: 1.4rem;
         font-weight: 500;
         line-height: 142.857%;
+
+        @include abstracts.screen(sm) {
+            font-size: 1.6rem;
+        }
     }
 
     &-group {
@@ -124,6 +194,10 @@
         width: 121px;
         height: 36px;
         padding: 0 12px;
+
+        @include abstracts.screen(sm) {
+            width: 100%;
+        }
     }
 
     &-select-wrap,
@@ -141,8 +215,16 @@
         height: 35px;
         padding: 0 14px;
 
+        @include abstracts.screen(xl) {
+            width: 100%;
+        }
+
         &:first-child {
             width: 157px;
+
+            @include abstracts.screen(xl) {
+                width: 100%;
+            }
         }
 
         & + & {
@@ -161,6 +243,7 @@
     &-tag {
         height: 32px;
         padding: 0 12px;
+        font-size: 1.4rem;
     }
 
     &-search-wrap {
@@ -173,6 +256,10 @@
         padding: 0;
         border: none;
         font-size: 1.5rem;
+
+        @include abstracts.screen(sm) {
+            font-size: 1.6rem;
+        }
 
         &::placeholder {
             font-weight: 400;

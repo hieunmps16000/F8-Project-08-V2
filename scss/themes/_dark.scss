@@ -37,7 +37,15 @@ html.dark {
     --like-btn-bg-color: #292e39;
     --like-btn-shadow-color: rgba(124, 124, 124, 0.2);
 
+    --btn-color: #9e9da8;
+    --btn-bg-color: #171c28;
+
     // Product card
     --product-card-bg-color: #171c28;
     --product-card-shadow-color: rgba(0, 0, 0, 0.2);
+
+    // Filter form
+    --filter-form-bg-color: #292e39;
+    --filter-arrow-color: brightness(0) saturate(100%) invert(14%) sepia(38%) saturate(386%) hue-rotate(182deg)
+        brightness(87%) contrast(86%);
 }

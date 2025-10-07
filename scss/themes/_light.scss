@@ -40,6 +40,9 @@ html {
     --like-btn-bg-color: #fff;
     --like-btn-shadow-color: rgba(124, 124, 124, 0.2);
 
+    --btn-color: #9e9da8;
+    --btn-bg-color: #f8f8fb;
+
     // Product card
     --product-card-bg-color: #fff;
     --product-card-shadow-color: rgba(237, 237, 246, 0.2);
@@ -47,4 +50,6 @@ html {
     // Filter form
     --filter-form-bg-color: #fff;
     --filter-form-shadow-color: rgba(200, 200, 200, 0.4);
+    --filter-arrow-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(6519%) hue-rotate(289deg)
+        brightness(112%) contrast(100%);
 }

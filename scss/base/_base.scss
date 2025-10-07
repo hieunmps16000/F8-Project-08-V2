@@ -29,6 +29,8 @@ input,
 textarea,
 select,
 option {
+    color: inherit;
+    background: transparent;
     font-family: inherit;
     font-size: inherit;
     outline: none;
