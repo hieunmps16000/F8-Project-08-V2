@@ -81,6 +81,8 @@ input,
 textarea,
 select,
 option {
+  margin: 0;
+  padding: 0;
   color: inherit;
   background: transparent;
   font-family: inherit;
@@ -2002,9 +2004,10 @@ button {
 }
 
 .btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-width: 98px;
   height: 46px;
   padding: 0 20px;
   border-radius: 6px;
@@ -2016,6 +2019,9 @@ button {
 }
 .btn + .btn {
   margin-left: 20px;
+}
+.btn + .btn.btn--no-margin-left {
+  margin-left: 0;
 }
 .btn--text {
   background: transparent;
@@ -2038,6 +2044,9 @@ button {
 }
 .btn:hover {
   opacity: 0.9;
+}
+.btn__icon {
+  margin-right: 10px;
 }
 
 .product-card {
@@ -2332,11 +2341,90 @@ button {
   cursor: pointer;
 }
 
+.form__group {
+  margin-top: 30px;
+}
+.form__group--inline {
+  display: flex;
+  align-items: center;
+}
+.form__input-text {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #d2d1d6;
+}
+.form__input-text:focus-within {
+  border-color: #77dae6;
+}
+.form__input {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%;
+}
+.form__input::placeholder {
+  color: #d2d1d6;
+}
+.form__input-icon {
+  margin-left: 12px;
+  width: 24px;
+}
+.form__checkbox {
+  position: relative;
+}
+.form__checkbox:has(:checked)::before {
+  border-color: #ffb700;
+  background: #ffb700;
+}
+.form__checkbox::before, .form__checkbox::after {
+  content: "";
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  border-radius: 6px;
+  border: 1px solid #9e9da8;
+}
+.form__checkbox::after {
+  top: 4px;
+  left: 2px;
+  width: 16px;
+  height: 8px;
+  border: 3px solid;
+  border-color: transparent transparent #fff #fff;
+  rotate: -45deg;
+}
+.form__checkbox-label {
+  margin-left: 29px;
+  color: #9e9da8;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 146.667%;
+  user-select: none;
+}
+.form__pull-right {
+  margin-left: auto;
+}
+
+@media (max-width: 991.98px) {
+  html {
+    --header-bg-color: #fff;
+  }
+}
+@media (max-width: 767.98px) {
+  html {
+    --cate-item-bg-color: #fff;
+  }
+}
 html {
   --body-bg-color: #f6f6f6;
   --text-color: #1a162e;
-  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(7%) saturate(5802%) hue-rotate(212deg) brightness(92%)
-      contrast(96%);
+  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(7%) saturate(5802%) hue-rotate(212deg)
+      brightness(92%) contrast(96%);
   --header-bg-color: #eee;
   --header-shadow: rgba(237, 237, 246, 0.2);
   --top-act-bg-color: #fff;
@@ -2362,16 +2450,8 @@ html {
   --filter-arrow-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(6519%) hue-rotate(289deg)
       brightness(112%) contrast(100%);
   --footer-bg-color: #eee;
-}
-@media (max-width: 991.98px) {
-  html {
-    --header-bg-color: #fff;
-  }
-}
-@media (max-width: 767.98px) {
-  html {
-    --cate-item-bg-color: #fff;
-  }
+  --auth-intro-bg-color: #fafafd;
+  --auth-content-bg-color: #fff;
 }
 
 html.dark {
@@ -2441,6 +2521,88 @@ html.dark {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+
+.auth {
+  display: flex;
+  min-height: 100vh;
+  text-align: center;
+  background: #fafafd;
+}
+.auth__intro, .auth__content, .auth__content-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.auth__intro {
+  flex: 1;
+  gap: 50px;
+}
+.auth__intro-img {
+  max-width: 100%;
+}
+.auth__intro-text {
+  max-width: 412px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%;
+}
+.auth__content {
+  flex: 1;
+  background: #fff;
+}
+.auth__content-inner {
+  margin: 50px auto;
+  width: min(460px, 100%);
+}
+.auth__heading {
+  margin-top: 50px;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.auth__desc {
+  margin-top: 10px;
+  padding: 0 30px;
+  color: #9e9da8;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.auth__form {
+  margin-top: 30px;
+  width: 100%;
+}
+.auth__link {
+  color: #0071dc;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.auth__link:hover {
+  opacity: 0.9;
+}
+.auth__btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 50px;
+}
+.auth__btn {
+  height: 50px;
+  font-size: 1.8rem;
+  color: #1a162e;
+}
+.auth__text {
+  margin-top: 108px;
+  color: #9e9da8;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 144.444%;
+}
+.auth__text-link {
+  font-size: inherit;
 }
 
 /*# sourceMappingURL=main.css.map */

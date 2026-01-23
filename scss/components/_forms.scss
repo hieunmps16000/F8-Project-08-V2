@@ -1,0 +1,83 @@
+.form {
+    &__group {
+        margin-top: 30px;
+
+        &--inline {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__input-text {
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid #d2d1d6;
+
+        &:focus-within {
+            border-color: #77dae6;
+        }
+    }
+
+    &__input {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%;
+
+        &::placeholder {
+            color: #d2d1d6;
+        }
+
+        &-icon {
+            margin-left: 12px;
+            width: 24px;
+        }
+    }
+
+    &__checkbox {
+        position: relative;
+
+        &:has(:checked)::before {
+            border-color: #ffb700;
+            background: #ffb700;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 19px;
+            height: 19px;
+            border-radius: 6px;
+            border: 1px solid #9e9da8;
+        }
+
+        &::after {
+            top: 4px;
+            left: 2px;
+            width: 16px;
+            height: 8px;
+            border: 3px solid;
+            border-color: transparent transparent #fff #fff;
+            rotate: -45deg;
+        }
+
+        &-label {
+            margin-left: 29px;
+            color: #9e9da8;
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 146.667%;
+            user-select: none;
+        }
+    }
+
+    &__pull-right {
+        margin-left: auto;
+    }
+}

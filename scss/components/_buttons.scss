@@ -41,9 +41,10 @@
 
 // Buttons
 .btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-width: 98px;
     height: 46px;
     padding: 0 20px;
     border-radius: 6px;
@@ -55,8 +56,12 @@
     font-weight: 500;
     user-select: none;
 
-    & + & {
+    + .btn {
         margin-left: 20px;
+
+        &.btn--no-margin-left {
+            margin-left: 0;
+        }
     }
 
     &--text {
@@ -86,5 +91,9 @@
 
     &:hover {
         opacity: 0.9;
+    }
+
+    &__icon {
+        margin-right: 10px;
     }
 }
