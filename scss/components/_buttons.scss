@@ -48,8 +48,6 @@
     height: 46px;
     padding: 0 20px;
     border-radius: 6px;
-
-    color: var(--btn-color);
     background: var(--btn-bg-color);
 
     font-size: 1.5rem;
@@ -70,7 +68,6 @@
     }
 
     &--primary {
-        color: #1a162e;
         background: #ffb700;
     }
 

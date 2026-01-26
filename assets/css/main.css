@@ -1456,6 +1456,13 @@ button {
   cursor: pointer;
   box-shadow: 0 4px 14px 2px rgba(0, 0, 0, 0.08);
 }
+@media (max-width: 767.98px) {
+  .top-act__sign-up {
+    height: 36px !important;
+    padding: 0 8px !important;
+    min-width: auto !important;
+  }
+}
 
 .nav-btn {
   align-items: center;
@@ -2011,7 +2018,6 @@ button {
   height: 46px;
   padding: 0 20px;
   border-radius: 6px;
-  color: var(--btn-color);
   background: var(--btn-bg-color);
   font-size: 1.5rem;
   font-weight: 500;
@@ -2028,7 +2034,6 @@ button {
   font-weight: 400;
 }
 .btn--primary {
-  color: #1a162e;
   background: #ffb700;
 }
 .btn--outline {
@@ -2342,7 +2347,7 @@ button {
 }
 
 .form__group {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .form__group--inline {
   display: flex;
@@ -2357,7 +2362,7 @@ button {
   border: 1px solid #d2d1d6;
 }
 .form__input-text:focus-within {
-  border-color: #77dae6;
+  border-color: #0071dc;
 }
 .form__input {
   flex: 1;
@@ -2372,38 +2377,39 @@ button {
 }
 .form__input-icon {
   margin-left: 12px;
-  width: 24px;
 }
 .form__checkbox {
   position: relative;
 }
-.form__checkbox:has(:checked)::before {
-  border-color: #ffb700;
-  background: #ffb700;
-}
 .form__checkbox::before, .form__checkbox::after {
   content: "";
   position: absolute;
+}
+.form__checkbox::before {
   width: 19px;
   height: 19px;
   border-radius: 6px;
   border: 1px solid #9e9da8;
 }
-.form__checkbox::after {
-  top: 4px;
+.form__checkbox:has(:checked)::before {
+  border-color: #ffb700;
+  background: #ffb700;
+}
+.form__checkbox:has(:checked)::after {
+  top: 3px;
   left: 2px;
-  width: 16px;
+  width: 14px;
   height: 8px;
+  rotate: -45deg;
   border: 3px solid;
   border-color: transparent transparent #fff #fff;
-  rotate: -45deg;
 }
 .form__checkbox-label {
-  margin-left: 29px;
-  color: #9e9da8;
+  margin-left: 26px;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 146.667%;
+  color: #9e9da8;
   user-select: none;
 }
 .form__pull-right {
@@ -2526,18 +2532,46 @@ html.dark {
 .auth {
   display: flex;
   min-height: 100vh;
-  text-align: center;
   background: #fafafd;
 }
-.auth__intro, .auth__content, .auth__content-inner {
+.auth__intro, .auth__content {
+  flex: 1;
+  padding: 0 30px;
+}
+.auth__intro {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.auth__intro {
-  flex: 1;
   gap: 50px;
+}
+@media (max-width: 767.98px) {
+  .auth__intro-logo, .auth__intro-next {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .auth__intro-logo {
+    top: 80px;
+  }
+  .auth__intro-logo__img {
+    width: 32px;
+  }
+  .auth__intro-next {
+    align-items: center;
+    bottom: 50px;
+    gap: 13px;
+  }
+  .auth__intro-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ededf6;
+  }
+  .auth__intro-dot--active {
+    background: #b9babe;
+  }
 }
 .auth__intro-img {
   max-width: 100%;
@@ -2546,13 +2580,29 @@ html.dark {
   max-width: 412px;
   font-size: 1.8rem;
   font-weight: 500;
+  text-align: center;
   line-height: 144.444%;
 }
 .auth__content {
-  flex: 1;
+  text-align: center;
   background: #fff;
 }
+@media (max-width: 767.98px) {
+  .auth__content {
+    position: fixed;
+    inset: 0;
+    overflow-y: auto;
+    transition: transform 0.3s;
+  }
+  .auth__content.hide {
+    transform: translate(100%);
+  }
+}
 .auth__content-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 50px auto;
   width: min(460px, 100%);
 }
@@ -2564,14 +2614,14 @@ html.dark {
 }
 .auth__desc {
   margin-top: 10px;
-  padding: 0 30px;
+  padding: 0 20px;
   color: #9e9da8;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 146.667%;
 }
 .auth__form {
-  margin-top: 30px;
+  margin-top: 40px;
   width: 100%;
 }
 .auth__link {
@@ -2586,13 +2636,13 @@ html.dark {
 .auth__btn-group {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   margin-top: 50px;
 }
 .auth__btn {
   height: 50px;
+  border-radius: 10px;
   font-size: 1.8rem;
-  color: #1a162e;
 }
 .auth__text {
   margin-top: 108px;

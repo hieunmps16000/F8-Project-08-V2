@@ -22,15 +22,22 @@
     </head>
     <body>
         <main class="auth">
-            <!-- Auth intro -->
             <div class="auth__intro">
+                <a href="./" class="logo auth__intro-logo d-none d-md-flex">
+                    <img src="./assets/icons/logo.svg" alt="grocerymart" class="logo__img" />
+                    <h1 class="logo__title">grocerymart</h1>
+                </a>
                 <img src="./assets/img/auth/intro.svg" alt="" class="auth__intro-img" />
                 <p class="auth__intro-text">
                     The best of luxury brand values, high quality products, and innovative services
                 </p>
+                <button class="auth__intro-next d-none d-md-flex js-toggle" toggle-target="#auth__content">
+                    <span class="auth__intro-dot auth__intro-dot--active"></span>
+                    <span class="auth__intro-dot"></span>
+                    <img src="./assets/icons/auth-arrow.svg" alt="" class="auth__intro-arrow" />
+                </button>
             </div>
-            <!-- Auth content -->
-            <div class="auth__content">
+            <div id="auth__content" class="auth__content hide">
                 <div class="auth__content-inner">
                     <!-- Logo -->
                     <a href="./" class="logo">
@@ -39,7 +46,7 @@
                     </a>
                     <h1 class="auth__heading">Sign Up</h1>
                     <p class="auth__desc">Let’s create your account and Shop like a pro and save money.</p>
-                    <form action="" class="form auth__form">
+                    <form action="./index-logined.html" class="form auth__form">
                         <div class="form__group">
                             <div class="form__input-text">
                                 <input type="email" class="form__input" placeholder="Email" />
@@ -74,10 +81,13 @@
                         </div>
                     </form>
                     <p class="auth__text">
-                        You have an account yet? <a href="sign-in.html" class="auth__link auth__text-link">Sign In</a>
+                        You have an account yet? <a href="./sign-in.html" class="auth__link auth__text-link">Sign In</a>
                     </p>
                 </div>
             </div>
         </main>
+        <script>
+            window.dispatchEvent(new Event("template-loaded"));
+        </script>
     </body>
 </html>
