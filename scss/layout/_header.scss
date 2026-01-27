@@ -39,6 +39,21 @@
             display: block;
         }
     }
+
+    &__logo {
+        &-img {
+            @include abstracts.screen(lg) {
+                width: 24px !important;
+            }
+        }
+
+        &-title {
+            @include abstracts.screen(lg) {
+                margin-left: 10px !important;
+                font-size: 1.8rem !important;
+            }
+        }
+    }
 }
 
 .navbar {

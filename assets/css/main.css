@@ -1245,6 +1245,17 @@ button {
     display: none !important;
   }
 }
+@keyframes shake {
+  0%, 100% {
+    translate: 0;
+  }
+  25%, 75% {
+    translate: 4px;
+  }
+  50% {
+    translate: -4px;
+  }
+}
 .top-act__btn, .top-act__group, .top-act, .navbar__link, .navbar__list, .top-bar {
   display: flex;
   align-items: center;
@@ -1286,6 +1297,17 @@ button {
 @media (max-width: 991.98px) {
   .top-bar__more {
     display: block;
+  }
+}
+@media (max-width: 991.98px) {
+  .top-bar__logo-img {
+    width: 24px !important;
+  }
+}
+@media (max-width: 991.98px) {
+  .top-bar__logo-title {
+    margin-left: 10px !important;
+    font-size: 1.8rem !important;
   }
 }
 
@@ -1641,22 +1663,11 @@ button {
   align-items: center;
   color: var(--text-color);
 }
-@media (max-width: 575.98px) {
-  .logo__img {
-    width: 24px;
-  }
-}
 .logo__title {
   margin-left: 14px;
   font-size: 2.2rem;
   font-weight: 700;
   line-height: 145.455%;
-}
-@media (max-width: 575.98px) {
-  .logo__title {
-    margin-left: 10px;
-    font-size: 1.8rem;
-  }
 }
 
 .dropdown {
@@ -2346,12 +2357,32 @@ button {
   cursor: pointer;
 }
 
+.form:has(:invalid) .form__submit-btn {
+  opacity: 0.5;
+  pointer-events: none;
+}
 .form__group {
-  margin-top: 20px;
+  margin-top: 30px;
+}
+@media (max-width: 767.98px) {
+  .form__group {
+    margin-top: 20px;
+  }
 }
 .form__group--inline {
   display: flex;
   align-items: center;
+}
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-text {
+  border-color: #ff2c2c;
+  background: rgba(255, 44, 44, 0.1);
+}
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-icon {
+  display: none;
+}
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__error,
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-icon-error {
+  display: block;
 }
 .form__input-text {
   display: flex;
@@ -2360,6 +2391,11 @@ button {
   height: 50px;
   border-radius: 10px;
   border: 1px solid #d2d1d6;
+}
+@media (max-width: 767.98px) {
+  .form__input-text {
+    height: 48px;
+  }
 }
 .form__input-text:focus-within {
   border-color: #0071dc;
@@ -2372,11 +2408,29 @@ button {
   font-weight: 500;
   line-height: 144.444%;
 }
+@media (max-width: 767.98px) {
+  .form__input {
+    font-size: 1.6rem;
+  }
+}
 .form__input::placeholder {
   color: #d2d1d6;
 }
-.form__input-icon {
+.form__input-icon, .form__input-icon-error {
   margin-left: 12px;
+  width: 24px;
+}
+.form__input-icon-error {
+  display: none;
+  animation: shake 0.3s;
+}
+.form__error {
+  display: none;
+  margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: left;
+  color: #ff2c2c;
 }
 .form__checkbox {
   position: relative;
@@ -2411,6 +2465,12 @@ button {
   line-height: 146.667%;
   color: #9e9da8;
   user-select: none;
+}
+@media (max-width: 767.98px) {
+  .form__checkbox-label {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
 }
 .form__pull-right {
   margin-left: auto;
@@ -2534,6 +2594,11 @@ html.dark {
   min-height: 100vh;
   background: #fafafd;
 }
+@supports (-webkit-touch-callout: none) {
+  .auth {
+    min-height: -webkit-fill-available;
+  }
+}
 .auth__intro, .auth__content {
   flex: 1;
   padding: 0 30px;
@@ -2553,9 +2618,6 @@ html.dark {
   }
   .auth__intro-logo {
     top: 80px;
-  }
-  .auth__intro-logo__img {
-    width: 32px;
   }
   .auth__intro-next {
     align-items: center;
@@ -2582,6 +2644,11 @@ html.dark {
   font-weight: 500;
   text-align: center;
   line-height: 144.444%;
+}
+@media (max-width: 767.98px) {
+  .auth__intro-text {
+    font-size: 1.5rem;
+  }
 }
 .auth__content {
   text-align: center;
@@ -2612,6 +2679,11 @@ html.dark {
   font-weight: 500;
   line-height: 146.667%;
 }
+@media (max-width: 767.98px) {
+  .auth__heading {
+    font-size: 2.2rem;
+  }
+}
 .auth__desc {
   margin-top: 10px;
   padding: 0 20px;
@@ -2620,9 +2692,19 @@ html.dark {
   font-weight: 500;
   line-height: 146.667%;
 }
+@media (max-width: 767.98px) {
+  .auth__desc {
+    font-size: 1.4rem;
+  }
+}
 .auth__form {
   margin-top: 40px;
   width: 100%;
+}
+@media (max-width: 767.98px) {
+  .auth__form {
+    margin-top: 0;
+  }
 }
 .auth__link {
   color: #0071dc;

@@ -5,21 +5,10 @@
     align-items: center;
     color: var(--text-color);
 
-    &__img {
-        @include abstracts.screen(sm) {
-            width: 24px;
-        }
-    }
-
     &__title {
         margin-left: 14px;
         font-size: 2.2rem;
         font-weight: 700;
         line-height: 145.455%;
-
-        @include abstracts.screen(sm) {
-            margin-left: 10px;
-            font-size: 1.8rem;
-        }
     }
 }
