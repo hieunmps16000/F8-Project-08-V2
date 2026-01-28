@@ -39,6 +39,7 @@ html.dark {
 
     --btn-color: #9e9da8;
     --btn-bg-color: #171c28;
+    --btn-outline-border-color: #b9babe;
 
     // Product card
     --product-card-bg-color: #171c28;
@@ -52,4 +53,14 @@ html.dark {
     // Footer
     --footer-bg-color: #171c28;
     --footer-form-input-color: #1a162e;
+
+    // Auth
+    --auth-bg: #171c28;
+    --auth-intro-text: #b9babe;
+    --auth-content-bg: #292e39;
+    --auth-heading-color: #b9babe;
+    --auth-intro-text-color: #b9babe;
+
+    // Forms
+    --form-input-border-color: #b9babe;
 }

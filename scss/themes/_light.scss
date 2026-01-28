@@ -1,14 +1,6 @@
 @use "../abstracts";
 
 html {
-    @include abstracts.screen(lg) {
-        --header-bg-color: #fff;
-    }
-
-    @include abstracts.screen(md) {
-        --cate-item-bg-color: #fff;
-    }
-
     & {
         --body-bg-color: #f6f6f6;
         --text-color: #1a162e;
@@ -58,7 +50,22 @@ html {
         --footer-bg-color: #eee;
 
         // Auth
-        --auth-intro-bg-color: #fafafd;
-        --auth-content-bg-color: #fff;
+        --auth-bg: #fafafd;
+        --auth-content-bg: #fff;
+
+        // Forms
+        --form-input-border-color: #d2d1d6;
+    }
+
+    @include abstracts.screen(lg) {
+        --header-bg-color: #fff;
+    }
+
+    @include abstracts.screen(md) {
+        --cate-item-bg-color: #fff;
+    }
+
+    @include abstracts.screen(md) {
+        --auth-bg: #fff;
     }
 }
