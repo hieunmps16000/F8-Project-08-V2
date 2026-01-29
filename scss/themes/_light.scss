@@ -35,6 +35,7 @@ html {
 
         --btn-color: #9e9da8;
         --btn-bg-color: #f8f8fb;
+        --btn-outline-border-color: #d2d1d6;
 
         // Product card
         --product-card-bg-color: #fff;
@@ -55,6 +56,13 @@ html {
 
         // Forms
         --form-input-border-color: #d2d1d6;
+
+        // Product detail
+        --product-detail-bg: #fff;
+
+        // Breadcrumbs
+        --breadcrumb-bg: #f6f6f6;
+        --breadcrumb-shadow: rgba(237, 237, 246, 0.2);
     }
 
     @include abstracts.screen(lg) {
@@ -63,9 +71,8 @@ html {
 
     @include abstracts.screen(md) {
         --cate-item-bg-color: #fff;
-    }
-
-    @include abstracts.screen(md) {
         --auth-bg: #fff;
+        --product-detail-bg: #fafafd;
+        --breadcrumb-bg: #fff;
     }
 }

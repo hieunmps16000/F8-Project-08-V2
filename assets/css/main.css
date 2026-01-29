@@ -2495,6 +2495,35 @@ button {
   border-color: #71be34;
 }
 
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 16px;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--breadcrumb-bg);
+  box-shadow: 0 20px 60px 10px var(--breadcrumb-shadow);
+}
+.breadcrumbs__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  color: #9e9da8;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
+}
+.breadcrumbs__link--current {
+  color: inherit;
+}
+@media (max-width: 767.98px) {
+  .breadcrumbs__link {
+    font-size: 1.4rem;
+  }
+}
+
 html {
   --body-bg-color: #f6f6f6;
   --text-color: #1a162e;
@@ -2518,6 +2547,7 @@ html {
   --like-btn-shadow-color: rgba(124, 124, 124, 0.2);
   --btn-color: #9e9da8;
   --btn-bg-color: #f8f8fb;
+  --btn-outline-border-color: #d2d1d6;
   --product-card-bg-color: #fff;
   --product-card-shadow-color: rgba(237, 237, 246, 0.2);
   --filter-form-bg-color: #fff;
@@ -2528,6 +2558,9 @@ html {
   --auth-bg: #fafafd;
   --auth-content-bg: #fff;
   --form-input-border-color: #d2d1d6;
+  --product-detail-bg: #fff;
+  --breadcrumb-bg: #f6f6f6;
+  --breadcrumb-shadow: rgba(237, 237, 246, 0.2);
 }
 @media (max-width: 991.98px) {
   html {
@@ -2537,11 +2570,9 @@ html {
 @media (max-width: 767.98px) {
   html {
     --cate-item-bg-color: #fff;
-  }
-}
-@media (max-width: 767.98px) {
-  html {
     --auth-bg: #fff;
+    --product-detail-bg: #fafafd;
+    --breadcrumb-bg: #fff;
   }
 }
 
@@ -2588,6 +2619,9 @@ html.dark {
   --auth-heading-color: #b9babe;
   --auth-intro-text-color: #b9babe;
   --form-input-border-color: #b9babe;
+  --product-detail-bg: #292e39;
+  --breadcrumb-bg: #171c28;
+  --breadcrumb-shadow: rgba(23, 28, 40, 0.2);
 }
 
 .home__container {
@@ -2792,6 +2826,21 @@ html.dark {
 }
 .auth__text-link {
   font-size: inherit;
+}
+
+.product-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--product-detail-bg);
+}
+.product-container {
+  margin-top: 30px;
+}
+@media (max-width: 767.98px) {
+  .product-container {
+    margin-top: 20px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
