@@ -1,4 +1,7 @@
 .product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     padding: 16px;
     border-radius: 20px;
     background: var(--product-card-bg-color);
@@ -29,10 +32,8 @@
         right: 0;
     }
 
-    &__title,
-    &__brand,
-    &__row {
-        margin-top: 16px;
+    &__title {
+        margin: 16px 0;
     }
 
     &__title,
@@ -44,6 +45,7 @@
     }
 
     &__brand {
+        margin: auto 0 16px 0;
         color: #9e9da8;
         font-size: 1.5rem;
         line-height: 146.667%;

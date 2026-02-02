@@ -2066,6 +2066,9 @@ button {
 }
 
 .product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   padding: 16px;
   border-radius: 20px;
   background: var(--product-card-bg-color);
@@ -2092,8 +2095,8 @@ button {
   bottom: 0;
   right: 0;
 }
-.product-card__title, .product-card__brand, .product-card__row {
-  margin-top: 16px;
+.product-card__title {
+  margin: 16px 0;
 }
 .product-card__title, .product-card__price, .product-card__rate {
   font-size: 1.6rem;
@@ -2101,6 +2104,7 @@ button {
   line-height: 150%;
 }
 .product-card__brand {
+  margin: auto 0 16px 0;
   color: #9e9da8;
   font-size: 1.5rem;
   line-height: 146.667%;
