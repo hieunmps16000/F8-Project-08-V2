@@ -10,6 +10,10 @@
     background: var(--breadcrumb-bg);
     box-shadow: 0 20px 60px 10px var(--breadcrumb-shadow);
 
+    @include abstracts.screen(md) {
+        border-radius: 20px;
+    }
+
     &__link {
         display: flex;
         align-items: center;

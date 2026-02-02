@@ -49,6 +49,8 @@ html.dark {
     --filter-form-bg-color: #292e39;
     --filter-arrow-color: brightness(0) saturate(100%) invert(14%) sepia(38%) saturate(386%) hue-rotate(182deg)
         brightness(87%) contrast(86%);
+    --filter-form-shadow-color: rgba(0, 0, 0, 0.4);
+    --filter-form-tag-color: #171c28;
 
     // Footer
     --footer-bg-color: #171c28;
@@ -66,8 +68,18 @@ html.dark {
 
     // Product detail
     --product-detail-bg: #292e39;
+    --prod-info-container-bg: #171c28;
+    --prod-info-container-shadow: rgba(23, 28, 40, 0.2);
+    --prod-info-bg: #171c28;
+    --prod-prop-tag-bg: #292e39;
+    --prod-info-heading-color: #eee;
+    --prod-prop-title-color: #eee;
+    --prod-info-price: #eee;
 
     // Breadcrumbs
     --breadcrumb-bg: #171c28;
     --breadcrumb-shadow: rgba(23, 28, 40, 0.2);
+
+    // Search bar
+    --search-bar-bg: #171c28;
 }

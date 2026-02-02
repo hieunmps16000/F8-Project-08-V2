@@ -46,7 +46,7 @@ html {
         --filter-form-shadow-color: rgba(200, 200, 200, 0.4);
         --filter-arrow-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(6519%) hue-rotate(289deg)
             brightness(112%) contrast(100%);
-
+        --filter-form-tag-color: #f8f8fb;
         // Footer
         --footer-bg-color: #eee;
 
@@ -59,10 +59,17 @@ html {
 
         // Product detail
         --product-detail-bg: #fff;
+        --prod-info-container-shadow: rgba(237, 237, 246, 0.2);
+        --prod-info-bg: #f6f6f6;
+        --prod-prop-tag-bg: #ededf6;
+        --prod-info-price: #000;
 
         // Breadcrumbs
         --breadcrumb-bg: #f6f6f6;
         --breadcrumb-shadow: rgba(237, 237, 246, 0.2);
+
+        // Search bar
+        --search-bar-bg: #fff;
     }
 
     @include abstracts.screen(lg) {
@@ -74,5 +81,8 @@ html {
         --auth-bg: #fff;
         --product-detail-bg: #fafafd;
         --breadcrumb-bg: #fff;
+        --product-detail-bg: #fafafd;
+        --prod-info-container-bg: #fff;
+        --prod-info-bg: transparent;
     }
 }

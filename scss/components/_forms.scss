@@ -141,4 +141,80 @@ $error-color: #ff2c2c;
     &__pull-right {
         margin-left: auto;
     }
+
+    &__label {
+        display: block;
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 145.455%;
+
+        &--small {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__label--small {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 142.857%;
+
+        @include abstracts.screen(sm) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__select-wrap {
+        display: inline-flex;
+        align-items: center;
+        height: 45px;
+        border-radius: 6px;
+        border: 1px solid #d2d1d6;
+    }
+
+    &__select {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-width: var(--width, 108px);
+        height: 35px;
+        padding: 0 14px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 142.857%;
+
+        @include abstracts.screen(xl) {
+            width: 100%;
+        }
+
+        & + & {
+            border-left: 1px solid #d2d1d6;
+        }
+
+        &-arrow {
+            cursor: pointer;
+        }
+
+        @include abstracts.screen(sm) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__tag {
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #9e9da8;
+        background: var(--filter-form-tag-color);
+
+        &:hover {
+            color: inherit;
+        }
+    }
 }
