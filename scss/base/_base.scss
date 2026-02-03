@@ -49,6 +49,11 @@ button {
     cursor: pointer;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .icon {
     display: block;
     filter: var(--icon-color);

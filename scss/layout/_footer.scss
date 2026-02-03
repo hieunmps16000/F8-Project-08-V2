@@ -124,7 +124,7 @@
             width: 50%;
         }
 
-        @include abstracts.screen(sm) {
+        @include abstracts.screen(md) {
             width: 100%;
         }
 

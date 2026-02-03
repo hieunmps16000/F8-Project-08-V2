@@ -41,6 +41,10 @@
         overflow: hidden;
         padding: 0 30px;
 
+        @include abstracts.screen(xxl) {
+            padding: 0;
+        }
+
         @include abstracts.screen(lg) {
             flex: 1;
         }
@@ -123,6 +127,8 @@
         line-height: 138.462%;
 
         @include abstracts.screen(md) {
+            margin-top: 16px;
+            font-size: 2.2rem;
             font-weight: 700;
             line-height: 144.444%;
         }
@@ -220,4 +226,8 @@
     &__tag {
         background: var(--prod-prop-tag-bg);
     }
+}
+
+.prod-tab__text-content {
+    margin-top: -20px;
 }

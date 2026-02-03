@@ -1,18 +1,42 @@
+@use "../abstracts";
+
 .review-card {
     padding: 30px;
     border-radius: 16px;
-    background: #fafafd;
+    background: var(--review-card-bg);
+
+    @include abstracts.screen(xl) {
+        text-align: center;
+    }
+
+    @include abstracts.screen(md) {
+        padding: 20px;
+        text-align: left;
+    }
 
     &__row {
         display: flex;
         align-items: center;
         gap: 20px;
+
+        @include abstracts.screen(xl) {
+            flex-direction: column;
+        }
+
+        @include abstracts.screen(md) {
+            flex-direction: row;
+        }
     }
 
     &__avatar {
         width: 80px;
         height: 80px;
         border-radius: 50%;
+
+        @include abstracts.screen(md) {
+            width: 60px;
+            height: 60px;
+        }
     }
 
     &__name {
