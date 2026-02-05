@@ -3239,7 +3239,7 @@ html.dark {
   margin-bottom: 16px;
 }
 .act-dropdown__heading {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 500;
   line-height: 145.455%;
 }
@@ -3258,11 +3258,9 @@ html.dark {
   overflow-x: auto;
 }
 .act-dropdown__summary {
-  margin: 16px 0;
+  margin-top: 16px;
   padding: 16px 0;
-  border-width: 1px 0;
-  border-style: solid;
-  border-color: var(--header-act-dropdown-border-color);
+  border-top: 1px solid var(--header-act-dropdown-border-color);
 }
 .act-dropdown__row {
   display: flex;
@@ -3284,6 +3282,8 @@ html.dark {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid var(--header-act-dropdown-border-color);
 }
 .act-dropdown__checkout-btn {
   width: min(180px, 100%);
