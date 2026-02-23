@@ -9,7 +9,11 @@ $error-color: #ff2c2c;
 
     &__row {
         display: flex;
-        gap: 30px;
+        column-gap: 30px;
+
+        @include abstracts.screen(md) {
+            flex-direction: column;
+        }
 
         & > * {
             flex: 1;
@@ -60,6 +64,7 @@ $error-color: #ff2c2c;
     }
 
     &__input-text {
+        position: relative;
         display: flex;
         align-items: center;
         padding: 0 12px;
@@ -106,6 +111,66 @@ $error-color: #ff2c2c;
         &-icon-error {
             display: none;
             animation: shake 0.3s;
+        }
+    }
+
+    &__select-dialog {
+        position: absolute;
+        bottom: 44px;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        opacity: 0;
+        visibility: hidden;
+        translate: 0 8px;
+
+        padding: 10px 0;
+        min-width: 240px;
+        max-height: 310px;
+        border-radius: 10px;
+        border: 1px solid #d2d1d6;
+
+        background: #fff;
+        transition: opacity, visibility, translate;
+        transition-duration: 0.2s;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            translate: 0;
+        }
+    }
+
+    &__search {
+        border-bottom: 1px solid #d2d1d6;
+        padding: 0 20px 10px;
+
+        &-icon {
+            width: 18px;
+        }
+    }
+
+    &__options-list {
+        flex: 1;
+        margin-top: 10px;
+        overflow-y: auto;
+    }
+
+    &__option {
+        padding: 8px 20px;
+        font-size: 1.4rem;
+        user-select: none;
+
+        &--current {
+            font-weight: 500;
+            background: rgba($color: #ffb700, $alpha: 0.5);
+        }
+
+        &:not(&--current):hover {
+            background: #eaeaea;
+            cursor: pointer;
         }
     }
 
