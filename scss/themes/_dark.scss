@@ -13,7 +13,7 @@ html.dark {
     --header-act-dropdown-bg: #333946;
     --header-act-dropdown-shadow: rgba(23, 28, 40, 0.4);
     --header-act-dropdown-border-color: #171c28;
-    --cart-preview-item-border-color: #171c28;
+    --cart-preview-item-border-color: #292e39;
 
     // Dropdown
     --dropdown-bg-color: #333946;
@@ -46,6 +46,7 @@ html.dark {
     --btn-color: #9e9da8;
     --btn-bg-color: #171c28;
     --btn-outline-border-color: #b9babe;
+
     // Product card
     --product-card-bg-color: #171c28;
     --product-card-shadow-color: rgba(0, 0, 0, 0.2);
@@ -90,4 +91,20 @@ html.dark {
 
     // Review card
     --review-card-bg: #171c28;
+
+    // Checkout
+    --checkout-page-breadcrumb-bg: #171c28;
+    --cart-info-bg: #171c28;
+    --cart-info-shadow: rgba(23, 28, 40, 0.2);
+    --cart-info-control-border: #292e39;
+    --cart-info-border: #292e39;
+
+    // Gift card
+    --gift-card-icon-bg: #292e39;
+    --gift-card-icon-shadow: transparent;
+
+    // Dialog / Modal
+    --dialog-overlay-bg: rgba(0, 0, 0, 0.7);
+    --dialog-content-bg: #292e39;
+    --dialog-content-shadow: rgba(23, 28, 40, 0.2);
 }

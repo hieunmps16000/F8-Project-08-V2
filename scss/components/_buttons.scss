@@ -54,17 +54,17 @@
     font-weight: 500;
     user-select: none;
 
-    + .btn {
+    + .btn:not(.btn--no-margin-left) {
         margin-left: 20px;
+    }
 
-        &.btn--no-margin-left {
-            margin-left: 0;
-        }
+    &--small {
+        height: 40px;
+        padding: 0 16px;
     }
 
     &--text {
         background: transparent;
-        font-weight: 400;
     }
 
     &--primary {
