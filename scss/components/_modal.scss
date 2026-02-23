@@ -5,7 +5,7 @@
     inset: 0;
 }
 
-.dialog {
+.modal {
     @extend %fill-screen;
     display: flex;
     align-items: center;
@@ -26,19 +26,35 @@
 
     &__overlay {
         @extend %fill-screen;
-        background: var(--dialog-overlay-bg);
+        background: var(--modal-overlay-bg);
+    }
+
+    &--small &__content {
+        width: min(360px, 100% - 40px);
     }
 
     &__content {
         position: relative;
         z-index: 1;
-        max-width: min(460px, 100% - 40px);
         padding: 30px;
+        width: min(640px, 100% - 40px);
         border-radius: 20px;
-        background: var(--dialog-content-bg);
-        box-shadow: 0 20px 60px 10px var(--dialog-content-shadow);
+        background: var(--modal-content-bg);
+        box-shadow: 0 20px 60px 10px var(--modal-content-shadow);
         transform: scale(0.5);
         transition: transform 0.3s;
+    }
+
+    &__heading {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 141.667%;
+    }
+
+    &__body {
+        padding-right: 20px;
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
     }
 
     &__text {

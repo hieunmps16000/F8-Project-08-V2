@@ -1316,9 +1316,9 @@ html {
   --cart-info-border: #d2d1d6;
   --gift-card-icon-bg: rgba(255, 255, 255, 0.9);
   --gift-card-icon-shadow: rgba(237, 237, 246, 0.2);
-  --dialog-overlay-bg: rgba(0, 0, 0, 0.4);
-  --dialog-content-bg: #fff;
-  --dialog-content-shadow: rgba(237, 237, 246, 0.2);
+  --modal-overlay-bg: rgba(0, 0, 0, 0.4);
+  --modal-content-bg: #fff;
+  --modal-content-shadow: rgba(237, 237, 246, 0.2);
 }
 @media (max-width: 991.98px) {
   html {
@@ -1405,9 +1405,9 @@ html.dark {
   --cart-info-border: #292e39;
   --gift-card-icon-bg: #292e39;
   --gift-card-icon-shadow: transparent;
-  --dialog-overlay-bg: rgba(0, 0, 0, 0.7);
-  --dialog-content-bg: #292e39;
-  --dialog-content-shadow: rgba(23, 28, 40, 0.2);
+  --modal-overlay-bg: rgba(0, 0, 0, 0.7);
+  --modal-content-bg: #292e39;
+  --modal-content-shadow: rgba(23, 28, 40, 0.2);
   --address-card-ctrl-btn-icon: brightness(0) saturate(100%) invert(80%) sepia(5%) saturate(158%) hue-rotate(191deg)
       brightness(94%) contrast(88%);
   --address-card-ctrl-btn-color: #b9babe;
@@ -1785,7 +1785,7 @@ html.dark {
   padding: 0 20px;
   border-radius: 6px;
   background: var(--btn-bg-color);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 500;
   user-select: none;
 }
@@ -2116,6 +2116,13 @@ html.dark {
   opacity: 0.5;
   pointer-events: none;
 }
+.form__row {
+  display: flex;
+  gap: 30px;
+}
+.form__row > * {
+  flex: 1;
+}
 .form__group {
   margin-top: 30px;
 }
@@ -2139,23 +2146,31 @@ html.dark {
 .form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-icon-error {
   display: block;
 }
+.form__text-area, .form__input-text {
+  border-radius: 10px;
+  border: 1px solid var(--form-input-border-color);
+}
+.form__text-area:focus-within, .form__input-text:focus-within {
+  border-color: #0071dc;
+}
+.form__text-area {
+  height: 100px;
+}
 .form__input-text {
   display: flex;
   align-items: center;
   padding: 0 12px;
   height: 50px;
-  border-radius: 10px;
-  border: 1px solid var(--form-input-border-color);
 }
 @media (max-width: 767.98px) {
   .form__input-text {
     height: 48px;
   }
 }
-.form__input-text:focus-within {
-  border-color: #0071dc;
+.form__input-text--small {
+  height: 42px;
 }
-.form__input {
+.form__text-area-input, .form__input {
   flex: 1;
   width: 100%;
   height: 100%;
@@ -2164,12 +2179,15 @@ html.dark {
   line-height: 144.444%;
 }
 @media (max-width: 767.98px) {
-  .form__input {
+  .form__text-area-input, .form__input {
     font-size: 1.6rem;
   }
 }
-.form__input::placeholder {
+.form__text-area-input::placeholder, .form__input::placeholder {
   color: #d2d1d6;
+}
+.form__text-area-input {
+  padding: 12px;
 }
 .form__input-icon, .form__input-icon-error {
   margin-left: 12px;
@@ -2238,6 +2256,7 @@ html.dark {
 }
 .form__label--small {
   margin-bottom: 10px;
+  font-size: 1.4rem;
 }
 .form__label--small {
   font-size: 1.4rem;
@@ -2546,12 +2565,12 @@ html.dark {
   margin: 0;
 }
 
-.dialog__overlay, .dialog {
+.modal__overlay, .modal {
   position: fixed;
   inset: 0;
 }
 
-.dialog {
+.modal {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2560,32 +2579,45 @@ html.dark {
   transition: opacity, visibility;
   transition-duration: 0.3s;
 }
-.dialog.show {
+.modal.show {
   opacity: 1;
   visibility: visible;
 }
-.dialog.show .dialog__content {
+.modal.show .modal__content {
   transform: scale(1);
 }
-.dialog__overlay {
-  background: var(--dialog-overlay-bg);
+.modal__overlay {
+  background: var(--modal-overlay-bg);
 }
-.dialog__content {
+.modal--small .modal__content {
+  width: min(360px, 100% - 40px);
+}
+.modal__content {
   position: relative;
   z-index: 1;
-  max-width: min(460px, 100% - 40px);
   padding: 30px;
+  width: min(640px, 100% - 40px);
   border-radius: 20px;
-  background: var(--dialog-content-bg);
-  box-shadow: 0 20px 60px 10px var(--dialog-content-shadow);
+  background: var(--modal-content-bg);
+  box-shadow: 0 20px 60px 10px var(--modal-content-shadow);
   transform: scale(0.5);
   transition: transform 0.3s;
 }
-.dialog__text {
+.modal__heading {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 141.667%;
+}
+.modal__body {
+  padding-right: 20px;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+.modal__text {
   font-size: 1.8rem;
   line-height: 1.5;
 }
-.dialog__bottom {
+.modal__bottom {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -2594,13 +2626,13 @@ html.dark {
   margin-top: 30px;
 }
 @media (max-width: 767.98px) {
-  .dialog__text {
+  .modal__text {
     text-align: center;
   }
-  .dialog__bottom {
+  .modal__bottom {
     gap: 20px;
   }
-  .dialog__btn {
+  .modal__btn {
     flex: 1;
   }
 }

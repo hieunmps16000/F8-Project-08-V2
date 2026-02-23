@@ -91,10 +91,10 @@ html {
         --gift-card-icon-bg: rgba(255, 255, 255, 0.9);
         --gift-card-icon-shadow: rgba(237, 237, 246, 0.2);
 
-        // Dialog / Modal
-        --dialog-overlay-bg: rgba(0, 0, 0, 0.4);
-        --dialog-content-bg: #fff;
-        --dialog-content-shadow: rgba(237, 237, 246, 0.2);
+        // modal / Modal
+        --modal-overlay-bg: rgba(0, 0, 0, 0.4);
+        --modal-content-bg: #fff;
+        --modal-content-shadow: rgba(237, 237, 246, 0.2);
     }
 
     @include abstracts.screen(lg) {

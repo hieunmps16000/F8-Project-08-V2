@@ -103,10 +103,10 @@ html.dark {
     --gift-card-icon-bg: #292e39;
     --gift-card-icon-shadow: transparent;
 
-    // Dialog / Modal
-    --dialog-overlay-bg: rgba(0, 0, 0, 0.7);
-    --dialog-content-bg: #292e39;
-    --dialog-content-shadow: rgba(23, 28, 40, 0.2);
+    // modal / Modal
+    --modal-overlay-bg: rgba(0, 0, 0, 0.7);
+    --modal-content-bg: #292e39;
+    --modal-content-shadow: rgba(23, 28, 40, 0.2);
 
     // Address card
     --address-card-ctrl-btn-icon: brightness(0) saturate(100%) invert(80%) sepia(5%) saturate(158%) hue-rotate(191deg)
