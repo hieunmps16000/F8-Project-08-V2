@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 // Filter button
 .filter-btn {
     display: flex;
@@ -60,7 +62,10 @@
 
     &--small {
         height: 40px;
-        padding: 0 16px;
+
+        @include abstracts.screen(md) {
+            height: 46px;
+        }
     }
 
     &--text {

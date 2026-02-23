@@ -84,7 +84,7 @@
         }
     }
 
-    @include abstracts.screen(sm) {
+    @include abstracts.screen(md) {
         inset: 0 20% 0 0;
     }
 
