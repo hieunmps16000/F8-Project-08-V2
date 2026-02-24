@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -410,7 +410,9 @@
                                         <span class="cart-info__value">$201.65</span>
                                     </div>
                                     <div class="cart-info__checkout-act">
-                                        <a href="#!" class="btn btn--primary btn--rounded cart-info__checkout-btn"
+                                        <a
+                                            href="./payment.html"
+                                            class="btn btn--primary btn--rounded cart-info__checkout-btn"
                                             >Continue to checkout</a
                                         >
                                     </div>
@@ -446,11 +448,11 @@
             <div class="modal__content">
                 <p class="modal__text">Are you sure you want to delete?</p>
                 <div class="modal__bottom">
-                    <button class="btn btn--small btn--text modal__btn js-toggle" toggle-target="#delete-confirm">
+                    <button class="btn btn--small btn--outline modal__btn js-toggle" toggle-target="#delete-confirm">
                         Cancel
                     </button>
                     <button
-                        class="btn btn--small btn--primary modal__btn btn--no-margin-left js-toggle"
+                        class="btn btn--small btn--primary btn--danger modal__btn btn--no-margin-left js-toggle"
                         toggle-target="#delete-confirm"
                     >
                         Delete
@@ -527,6 +529,7 @@
                                 <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
 
                                 <div id="form-select-dialog" class="form__select-dialog hide">
+                                    <h3 class="form__dialog-heading d-none d-sm-block">City/District/Town</h3>
                                     <button
                                         class="form__close-dialog d-none d-sm-block js-toggle"
                                         toggle-target="#form-select-dialog"
