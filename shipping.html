@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -461,7 +461,7 @@
         </div>
 
         <!-- Modal add new shipping address -->
-        <div id="add-new-address" class="modal modal show">
+        <div id="add-new-address" class="modal hide">
             <div class="modal__content">
                 <form action="" class="form">
                     <h2 class="modal__heading">Add new shipping address</h2>
@@ -521,15 +521,21 @@
                                     name=""
                                     id="city"
                                     class="form__input js-toggle"
-                                    toggle-target="#form-slect-dialog"
+                                    toggle-target="#form-select-dialog"
                                     placeholder="City/District/Town"
                                 />
                                 <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
 
-                                <div id="form-slect-dialog" class="form__select-dialog hide">
+                                <div id="form-select-dialog" class="form__select-dialog hide">
+                                    <button
+                                        class="form__close-dialog d-none d-sm-block js-toggle"
+                                        toggle-target="#form-select-dialog"
+                                    >
+                                        &times
+                                    </button>
                                     <div class="form__search">
                                         <input type="text" class="form__search-input" placeholder="Search" />
-                                        <img src="./assets/icons/search.svg" alt="" class="form__search-icon" />
+                                        <img src="./assets/icons/search.svg" alt="" class="form__search-icon icon" />
                                     </div>
                                     <div class="form__options-list">
                                         <li class="form__option">Hanoi</li>

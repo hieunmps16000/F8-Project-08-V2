@@ -118,23 +118,39 @@ $error-color: #ff2c2c;
         position: absolute;
         bottom: 44px;
         left: 0;
+        z-index: 1;
 
         display: flex;
         flex-direction: column;
+
+        min-width: 240px;
+        max-height: 310px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+        border: 1px solid #d2d1d6;
+
+        background: var(--form-select-dialog-bg);
+        box-shadow: 0 0 8px var(--form-select-dialog-shadow);
 
         opacity: 0;
         visibility: hidden;
         translate: 0 8px;
 
-        padding: 10px 0;
-        min-width: 240px;
-        max-height: 310px;
-        border-radius: 10px;
-        border: 1px solid #d2d1d6;
-
-        background: #fff;
         transition: opacity, visibility, translate;
         transition-duration: 0.2s;
+
+        @include abstracts.screen(md) {
+            max-height: 280px;
+        }
+
+        @include abstracts.screen(sm) {
+            position: fixed;
+            inset: 0;
+            min-width: initial;
+            max-height: initial;
+            border-radius: 0;
+            border: none;
+        }
 
         &.show {
             opacity: 1;
@@ -143,12 +159,44 @@ $error-color: #ff2c2c;
         }
     }
 
+    &__close-dialog {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 20px;
+        font-size: 3rem;
+        opacity: 0.8;
+    }
+
     &__search {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        height: 38px;
+        padding: 0 20px;
         border-bottom: 1px solid #d2d1d6;
-        padding: 0 20px 10px;
+
+        @include abstracts.screen(lg) {
+            height: 42px;
+        }
+
+        @include abstracts.screen(sm) {
+            flex-direction: row-reverse;
+            margin-top: 40px;
+        }
+
+        &-input {
+            width: 100%;
+            height: 100%;
+        }
 
         &-icon {
             width: 18px;
+            margin-left: 10px;
+
+            @include abstracts.screen(sm) {
+                margin: 0 10px 0 0;
+            }
         }
     }
 
@@ -156,6 +204,7 @@ $error-color: #ff2c2c;
         flex: 1;
         margin-top: 10px;
         overflow-y: auto;
+        overscroll-behavior: contain;
     }
 
     &__option {
@@ -163,13 +212,17 @@ $error-color: #ff2c2c;
         font-size: 1.4rem;
         user-select: none;
 
+        @include abstracts.screen(lg) {
+            padding: 14px 20px;
+        }
+
         &--current {
             font-weight: 500;
             background: rgba($color: #ffb700, $alpha: 0.5);
         }
 
         &:not(&--current):hover {
-            background: #eaeaea;
+            background: var(--form-option-hover);
             cursor: pointer;
         }
     }
