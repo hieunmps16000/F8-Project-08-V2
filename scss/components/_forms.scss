@@ -170,7 +170,7 @@ $error-color: #ff2c2c;
         position: absolute;
         top: 0;
         right: 0;
-        padding: 5px 20px;
+        padding: 14px 20px;
         font-size: 3rem;
         opacity: 0.8;
     }
@@ -184,11 +184,11 @@ $error-color: #ff2c2c;
         border-bottom: 1px solid #d2d1d6;
 
         @include abstracts.screen(lg) {
-            height: 42px;
+            height: 48px;
         }
 
         @include abstracts.screen(sm) {
-            margin: 10px 14px 0px;
+            margin: 10px 30px 0px;
             border-radius: 10px;
             border: 1px solid #d2d1d6;
         }
@@ -201,6 +201,10 @@ $error-color: #ff2c2c;
         &-icon {
             width: 18px;
             margin-left: 10px;
+
+            @include abstracts.screen(md) {
+                width: 24px;
+            }
         }
     }
 
@@ -209,6 +213,10 @@ $error-color: #ff2c2c;
         margin-top: 10px;
         overflow-y: auto;
         overscroll-behavior: contain;
+
+        @supports (-webkit-touch-callout: none) {
+            padding-bottom: 300px;
+        }
     }
 
     &__option {
@@ -217,7 +225,8 @@ $error-color: #ff2c2c;
         user-select: none;
 
         @include abstracts.screen(lg) {
-            padding: 14px 20px;
+            padding: 14px 30px;
+            font-size: 1.6rem;
         }
 
         &--current {

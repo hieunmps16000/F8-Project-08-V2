@@ -525,6 +525,7 @@
                                     class="form__input js-toggle"
                                     toggle-target="#form-select-dialog"
                                     placeholder="City/District/Town"
+                                    readonly
                                 />
                                 <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
 
@@ -591,7 +592,12 @@
                         <button class="btn btn--small btn--text modal__btn js-toggle" toggle-target="#add-new-address">
                             Cancel
                         </button>
-                        <button class="btn btn--small btn--primary modal__btn btn--no-margin-left">Create</button>
+                        <button
+                            class="btn btn--small btn--primary modal__btn btn--no-margin-left js-toggle"
+                            toggle-target="#add-new-address"
+                        >
+                            Create
+                        </button>
                     </div>
                 </form>
             </div>
