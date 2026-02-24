@@ -1331,6 +1331,7 @@ html {
   --modal-overlay-bg: rgba(0, 0, 0, 0.4);
   --modal-content-bg: #fff;
   --modal-content-shadow: rgba(237, 237, 246, 0.2);
+  --payment-item-bg: #f6f6f6;
 }
 @media (max-width: 991.98px) {
   html {
@@ -1426,6 +1427,7 @@ html.dark {
   --cart-info-edit-btn-icon: brightness(0) saturate(100%) invert(80%) sepia(5%) saturate(158%) hue-rotate(191deg)
       brightness(94%) contrast(88%);
   --cart-info-edit-btn-color: #b9babe;
+  --payment-item-bg: #292e39;
 }
 
 .logo {
@@ -2400,6 +2402,11 @@ html.dark {
   margin-bottom: 20px;
   font-size: 1.8rem;
 }
+@media (max-width: 767.98px) {
+  .form__label--medium {
+    margin-bottom: 10px;
+  }
+}
 .form__label--small {
   margin-bottom: 10px;
   font-size: 1.4rem;
@@ -3262,6 +3269,7 @@ html.dark {
 .cart-info__top {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 .cart-info__heading {
   font-size: 2.4rem;
@@ -3277,6 +3285,11 @@ html.dark {
   font-size: 2.2rem;
   font-weight: 500;
   line-height: 145.455%;
+}
+@media (max-width: 767.98px) {
+  .cart-info__heading--lv2 {
+    font-size: 1.8rem;
+  }
 }
 .cart-info__sub-heading {
   margin: 30px 0;
@@ -3338,6 +3351,7 @@ html.dark {
   margin-bottom: 30px;
 }
 .cart-info__form-row {
+  flex-direction: row;
   gap: 20px;
 }
 .cart-info__separate {
@@ -3365,6 +3379,7 @@ html.dark {
 .cart-info__edit-btn {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 10px;
   font-size: 1.8rem;
   font-weight: 400;
@@ -3651,7 +3666,12 @@ html.dark {
   margin-top: 30px;
   padding: 20px;
   border-radius: 20px;
-  background: #f6f6f6;
+  background: var(--payment-item-bg);
+}
+@media (max-width: 575.98px) {
+  .payment-item {
+    align-items: flex-start;
+  }
 }
 .payment-item--pointer {
   cursor: pointer;
@@ -3685,10 +3705,23 @@ html.dark {
   height: 54px;
   object-fit: cover;
 }
+@media (max-width: 575.98px) {
+  .payment-item__thumb {
+    width: 60px;
+    height: 46px;
+  }
+}
 .payment-item__content {
   flex: 1;
   display: flex;
   justify-content: space-between;
+  gap: 16px;
+}
+@media (max-width: 575.98px) {
+  .payment-item__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .payment-item__checkbox {
   display: flex;

@@ -310,6 +310,10 @@ $error-color: #ff2c2c;
         &--medium {
             margin-bottom: 20px;
             font-size: 1.8rem;
+
+            @include abstracts.screen(md) {
+                margin-bottom: 10px;
+            }
         }
 
         &--small {

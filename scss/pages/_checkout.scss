@@ -42,6 +42,7 @@
     &__top {
         display: flex;
         justify-content: space-between;
+        gap: 20px;
     }
 
     &__heading {
@@ -57,6 +58,10 @@
             font-size: 2.2rem;
             font-weight: 500;
             line-height: 145.455%;
+
+            @include abstracts.screen(md) {
+                font-size: 1.8rem;
+            }
         }
     }
 
@@ -128,6 +133,7 @@
         margin-bottom: 30px;
 
         &-row {
+            flex-direction: row;
             gap: 20px;
         }
     }
@@ -161,6 +167,7 @@
     &__edit-btn {
         display: flex;
         align-items: center;
+        flex-shrink: 0;
         gap: 10px;
         font-size: 1.8rem;
         font-weight: 400;
@@ -476,7 +483,11 @@
     margin-top: 30px;
     padding: 20px;
     border-radius: 20px;
-    background: #f6f6f6;
+    background: var(--payment-item-bg);
+
+    @include abstracts.screen(sm) {
+        align-items: flex-start;
+    }
 
     &--pointer {
         cursor: pointer;
@@ -516,12 +527,23 @@
         width: 70px;
         height: 54px;
         object-fit: cover;
+
+        @include abstracts.screen(sm) {
+            width: 60px;
+            height: 46px;
+        }
     }
 
     &__content {
         flex: 1;
         display: flex;
         justify-content: space-between;
+        gap: 16px;
+
+        @include abstracts.screen(sm) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__checkbox {

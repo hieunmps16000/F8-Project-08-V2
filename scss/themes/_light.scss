@@ -98,6 +98,9 @@ html {
         --modal-overlay-bg: rgba(0, 0, 0, 0.4);
         --modal-content-bg: #fff;
         --modal-content-shadow: rgba(237, 237, 246, 0.2);
+
+        // Payment item
+        --payment-item-bg: #f6f6f6;
     }
 
     @include abstracts.screen(lg) {
