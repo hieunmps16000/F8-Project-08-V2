@@ -68,7 +68,7 @@ body {
   background: var(--body-bg-color);
   font-size: 1.6rem;
   font-weight: 400;
-  font-family: "Gordita", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 a {
@@ -4025,7 +4025,12 @@ html.dark {
 }
 
 .header {
-  padding: 30px 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 20px 0;
   background: var(--header-bg-color);
 }
 @media (max-width: 991.98px) {
