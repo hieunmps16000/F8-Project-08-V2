@@ -6,6 +6,7 @@ html {
         --text-color: #1a162e;
         --icon-color: brightness(0) saturate(100%) invert(8%) sepia(7%) saturate(5802%) hue-rotate(212deg)
             brightness(92%) contrast(96%);
+        --separate-bg: #d2d1d6;
 
         --header-bg-color: #eee;
         --header-shadow: rgba(237, 237, 246, 0.2);
@@ -101,6 +102,14 @@ html {
 
         // Payment item
         --payment-item-bg: #f6f6f6;
+
+        // Profile
+        --profile-sidebar-bg: #fff;
+        --profile-sidebar-shadow: rgba(237, 237, 246, 0.2);
+        --profile-user-shadow: rgba(237, 237, 246, 0.2);
+        --profile-menu-link-hover: #eaeaea;
+        --account-info-bg: #f6f6f6;
+        --account-info-icon-bg: #fff;
     }
 
     @include abstracts.screen(lg) {

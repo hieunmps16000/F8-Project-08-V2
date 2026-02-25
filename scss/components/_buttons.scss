@@ -54,6 +54,7 @@
 
     font-size: 1.6rem;
     font-weight: 500;
+    white-space: nowrap;
     user-select: none;
 
     + .btn:not(.btn--no-margin-left) {
