@@ -1417,7 +1417,6 @@ html.dark {
   --checkout-page-breadcrumb-bg: #171c28;
   --cart-info-bg: #171c28;
   --cart-info-shadow: rgba(23, 28, 40, 0.2);
-  --cart-info-control-border: #292e39;
   --cart-info-border: #292e39;
   --gift-card-icon-bg: #292e39;
   --gift-card-icon-shadow: transparent;
@@ -3325,6 +3324,13 @@ html.dark {
   justify-content: space-between;
   gap: 30px;
 }
+@media (max-width: 767.98px) {
+  .cart-info__bottom--inline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
 .cart-info__continue {
   display: flex;
   flex-direction: column;
@@ -3381,6 +3387,11 @@ html.dark {
 .cart-info__checkout-btn {
   width: 100%;
   font-size: 1.8rem;
+}
+@media (max-width: 767.98px) {
+  .cart-info__checkout-all {
+    width: 100%;
+  }
 }
 .cart-info__edit-btn {
   display: flex;
@@ -3492,11 +3503,11 @@ html.dark {
 .cart-item__row {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 10px 30px;
 }
 @media (max-width: 767.98px) {
   .cart-item__row {
-    gap: 16px;
+    gap: 10px 16px;
   }
 }
 .cart-item__ctrl {
@@ -3526,6 +3537,7 @@ html.dark {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  row-gap: 20px;
 }
 .cart-item__total-price {
   margin-bottom: auto;
@@ -3561,6 +3573,11 @@ html.dark {
 }
 .cart-item__act:hover {
   opacity: 0.8;
+}
+@media (max-width: 767.98px) {
+  .cart-item__checkout-btn {
+    max-width: 200px;
+  }
 }
 
 .gift-card {
