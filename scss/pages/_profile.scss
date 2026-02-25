@@ -65,7 +65,7 @@
 
         &__link {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
             padding: 6px;
             border-radius: 5px;
@@ -85,5 +85,9 @@
             justify-content: center;
             width: 24px;
         }
+    }
+
+    &__desc {
+        margin-bottom: 16px;
     }
 }
