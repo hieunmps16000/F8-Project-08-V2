@@ -93,6 +93,13 @@
         @include abstracts.screen(md) {
             margin-top: 16px;
         }
+
+        &--inline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
     }
 
     &__continue {
@@ -202,25 +209,38 @@
             }
         }
     }
+
+    &__check-all {
+        margin: 30px 0;
+    }
 }
+// End .cart-info
 
 .cart-item {
     display: flex;
-    gap: 30px;
+    align-items: center;
     padding: 30px 0;
     border-bottom: 1px solid var(--cart-info-border);
 
     @include abstracts.screen(md) {
         padding: 16px 0;
-        gap: 16px;
 
         &:last-child {
             border: none;
         }
     }
 
+    &__checkbox {
+        align-self: flex-start;
+    }
+
     &__img-wrap {
         flex-shrink: 0;
+        margin: 0 30px 0 20px;
+
+        @include abstracts.screen(md) {
+            margin: 0 16px;
+        }
     }
 
     &__img {
@@ -242,11 +262,16 @@
     &__content {
         display: flex;
         gap: 30px;
+        flex: 1;
 
         @include abstracts.screen(md) {
             flex-direction: column;
             gap: 16px;
         }
+    }
+
+    &__left {
+        flex: 1;
     }
 
     &__title {
@@ -270,7 +295,7 @@
     &__row {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 30px;
 
         @include abstracts.screen(md) {
             gap: 16px;
