@@ -45,6 +45,12 @@
         gap: 20px;
     }
 
+    &__back-arrow {
+        position: relative;
+        top: 2px;
+        padding-right: 10px;
+    }
+
     &__heading {
         font-size: 2.4rem;
         font-weight: 700;
